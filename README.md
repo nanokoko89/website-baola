@@ -19,3 +19,4 @@ npm i
 npm run dev
 ```
 Cuộn xuống để thấy 6 card hai bên xoay dần và trôi ra xa về hai phía.
+# website-baola
