@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./Home.module.scss";
-import bind from "../../utils/cx";
+import bind from "../../utils/cx.js";
 import FloatingCards from "../../components/FloatingCards/FloatingCards.jsx";
 import Memberships from "../../components/Memberships/Memberships.jsx";
 import useScrollProgress from "../../hooks/useScrollProgress.js";
@@ -29,7 +29,7 @@ function lerpColor(a, b, t) {
   return `#${rr}${gg}${bb2}`;
 }
 
-export default function Home() {
+export default function Authentication() {
   const h1Ref = useRef(null);
   const [heroMid, setHeroMid] = useState(null);
   const headerP = useScrollProgress(0, 80);
