@@ -28,7 +28,27 @@ const demoItems = [
     title: "Beach Talk Radio",
     subtitle: "A Dinky Little Podcast",
   },
-  // ...thêm các mục khác tương tự ảnh
+  {
+    id: 1,
+    rank: 1,
+    avatar: "https://i.pravatar.cc/80?img=11",
+    title: "Simple Politics",
+    subtitle: "Helping people have better conversations about politics",
+  },
+  {
+    id: 2,
+    rank: 2,
+    avatar: "https://i.pravatar.cc/80?img=32",
+    title: "Cara",
+    subtitle: "building a new platform for artists",
+  },
+  {
+    id: 3,
+    rank: 3,
+    avatar: "https://i.pravatar.cc/80?img=48",
+    title: "Beach Talk Radio",
+    subtitle: "A Dinky Little Podcast",
+  },
 ];
 
 export default function Header() {
@@ -56,7 +76,7 @@ export default function Header() {
       </a>
 
       <div className={cx("nav-right")}>
-        <div className={cx("search")}>
+        <div className={cx("search")} onClick={() => setOpen(true)}>
           <svg
             className={cx("search-icon")}
             viewBox="0 0 24 24"
@@ -69,10 +89,9 @@ export default function Header() {
             <circle cx="11" cy="11" r="7"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input placeholder="Tìm thương hiệu, sản phẩm, dịch vụ" />
+          <span>Tìm thương hiệu, sản phẩm, dịch vụ</span>
+          {/* <input placeholder="" /> */}
         </div>
-
-        <button onClick={() => setOpen(true)}>Open “Search creators”</button>
 
         <a className={cx("nav-link")} href="#">
           Đăng nhập

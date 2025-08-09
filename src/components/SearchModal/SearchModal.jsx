@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import styles from "./SearchModal.module.scss";
+import useLockBodyScroll from "../../hooks/useLockBodyScroll";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
@@ -15,6 +16,9 @@ export default function SearchModal({ open, onClose, items = [] }) {
   const [mounted, setMounted] = useState(false);
   const [show, setShow] = useState(false);
   const inputRef = useRef(null);
+
+  // Khóa scroll nền khi modal tồn tại
+  useLockBodyScroll(mounted);
 
   // mount/unmount để transition mượt
   useEffect(() => {

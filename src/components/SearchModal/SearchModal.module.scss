@@ -16,6 +16,8 @@
   opacity: 0;
   transition: opacity 120ms ease-out;
   z-index: 1000;
+  touch-action: none; /* chặn gesture scroll trên overlay */
+  overscroll-behavior: contain;
 
   &.show {
     opacity: 1;
@@ -81,6 +83,8 @@
 
 .body {
   max-height: min(70vh, 560px);
+
+  -webkit-overflow-scrolling: touch;
   overflow: auto;
   padding: 8px 0;
 }
