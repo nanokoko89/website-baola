@@ -1,0 +1,19 @@
+@use '../../styles/variables' as *;
+
+.card{
+  width:230px; background:#fff; border-radius:16px; padding:18px; 
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  position:absolute;
+  will-change: transform;
+}
+.small{ width:220px; }
+.avatar{
+  width:48px; height:48px; border-radius:12px; background:$ink; color:#fff;
+  display:flex; align-items:center; justify-content:center; font-weight:800;
+  margin-bottom:10px; font-size:22px;
+}
+.img{ background:#eee; overflow:hidden; padding:0; }
+.img img{ width:100%; height:100%; object-fit:cover; }
+.logo{ background:$chip; color:$ink; }
+.card-title{ font-weight:700; font-size:14px; line-height:1.3; margin-bottom:10px; }
+.card-meta{ display:flex; align-items:center; gap:8px; color:$muted; font-size:13px; }

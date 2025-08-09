@@ -1,0 +1,28 @@
+@use '../../styles/variables' as *;
+
+.page{ position:relative; }
+.hero{
+  max-width:920px; margin:24px auto 120px; text-align:center; position:relative; padding:48px 16px 0;
+}
+.social-proof{
+  display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:22px; color:$success; font-weight:700;
+}
+.stars .star{ margin-right:4px; }
+.loved{ color:$ink; font-weight:600; opacity:.85; }
+
+.h1{ font-size:96px; line-height:.95; letter-spacing:-1px; margin:8px 0 14px; font-weight:900; }
+.h1 span{ display:block; }
+@media (max-width:900px){ .h1{ font-size:60px; } }
+
+.sub{ font-size:22px; color:$ink; opacity:.75; margin:0 auto 28px; max-width:720px; }
+.btn{ display:inline-flex; align-items:center; justify-content:center; padding:16px 28px; border-radius:999px; text-decoration:none; font-weight:800; border:2px solid transparent; }
+.btn:hover{ transform: translateY(-1px); }
+.btn-cta{ background:$brand-yellow; color:$ink; font-size:20px; }
+.muted{ color:$muted; margin-top:12px; font-size:14px; }
+
+.feature{
+  padding:80px 0 120px; background: #fff;
+}
+.feature h2{ text-align:center; font-size:36px; margin:0 0 24px; }
+.grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto; text-align:center; }
+.site-footer{ height:160px; }
