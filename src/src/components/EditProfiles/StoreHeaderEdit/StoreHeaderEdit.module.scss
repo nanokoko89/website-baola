@@ -1,0 +1,266 @@
+/* File: src/components/StoreHeaderEdit/StoreHeaderEdit.module.scss */
+
+.profile-form {
+  min-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.avatar-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: #f9f9ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+
+  .avatar-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #6366f1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+  }
+
+  /* ==== BỔ SUNG LỚP OVERLAY KHI ĐANG UPLOADING ==== */
+  &-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.7); /* lớp bán trong suốt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10;
+  }
+
+  .loading-text {
+    font-size: 14px;
+    color: #333333;
+  }
+}
+
+.form-group {
+  margin-bottom: 32px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+}
+
+.bio-input-wrapper {
+  position: relative;
+}
+
+.textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 16px;
+  background-color: white;
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+}
+
+.char-count {
+  position: absolute;
+  bottom: 12px;
+  right: 16px;
+  font-size: 14px;
+  color: #9ca3af;
+  background-color: white;
+  padding: 2px 4px;
+}
+
+.social-link-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+
+  &:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+  }
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 8px;
+  flex-shrink: 0;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+  }
+}
+
+.at-symbol {
+  font-size: 16px;
+  color: #6b7280;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.social-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 12px 8px;
+  background: transparent;
+}
+
+.more-socials-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  background: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #6366f1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #4f46e5;
+  }
+}
+
+.dropdown-icon {
+  font-size: 24px;
+  transition: transform 0.2s ease;
+
+  &.rotated {
+    transform: rotate(180deg);
+  }
+}
+
+.more-socials-list {
+  margin-top: 12px;
+  padding-top: 8px;
+}
+
+.save-btn {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 24px;
+
+  &:hover {
+    background-color: #4f46e5;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-form {
+    padding: 20px 16px;
+    min-width: 300px;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+  }
+
+  .avatar-overlay {
+    width: 70px;
+    height: 70px;
+  }
+
+  .input,
+  .textarea,
+  .social-input {
+    font-size: 16px; /* Tránh zoom trên iOS */
+  }
+}

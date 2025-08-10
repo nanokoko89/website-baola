@@ -1,0 +1,258 @@
+.app {
+  height: auto;
+  width: 100%;
+  min-height: 720px;
+  color: var(--template-text-color);
+  background-color: var(--template-color-secondary);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--template-text-color);
+  font-family: var(--template-font-family, "Roboto", sans-serif);
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  width: 100%;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Mạng xã hội */
+.socialIcons {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+.icon {
+  font-size: 24px;
+  color: var(--template-text-color);
+  transition: color 0.2s;
+}
+
+.icon:hover {
+  color: var(--template-color-primary);
+}
+
+/* Tiêu đề chính */
+.titleSection {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-style: italic;
+  margin-top: 8px;
+  margin-bottom: 30px;
+  display: block;
+}
+
+/* Các thẻ (cards) */
+.cards {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Card lớn */
+.card {
+  background-color: var(--template-color-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  color: var(--template-button-text-color);
+}
+
+/* Card chính */
+.cardMain {
+  /* Để cardMain có độ cao cố định hoặc tự điều chỉnh */
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.cardImageWrapper {
+  flex-shrink: 0;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 40%;
+    max-height: none;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.cardDescription {
+  margin-top: 12px;
+  line-height: 1.5;
+  color: var(--template-button-text-color);
+  font-size: 1rem;
+}
+
+.rating {
+  margin-top: 12px;
+}
+
+.star {
+  color: #f5c518;
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.price {
+  margin-top: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.currentPrice {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.oldPrice {
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: #777;
+}
+
+.btnDownload {
+  margin-top: 16px;
+  align-self: start;
+  background-color: transparent;
+  border: 2px solid var(--template-button-text-color);
+  padding: 8px 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 4px;
+  color: var(--template-button-text-color);
+}
+
+// .btnDownload:hover {
+//   background-color: var(--template-color-primary);
+//   color: var(--template-button-text-color);
+// }
+
+/* Card nhỏ */
+.cardSmall {
+  background-color: var(--template-color-primary);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 12px;
+  gap: 16px;
+}
+
+.cardSmallImageWrapper {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.cardSmallImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardSmallContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardSmallTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardSmallPrice,
+.cardSmallSubtitle {
+  margin-top: 4px;
+  color: #555;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.cardSmallArrow {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--template-button-text-color);
+  transition: transform 0.2s;
+}
+
+.cardSmall:hover .cardSmallArrow {
+  transform: translateX(4px);
+}

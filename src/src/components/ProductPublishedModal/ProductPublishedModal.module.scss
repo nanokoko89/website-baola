@@ -1,0 +1,90 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  padding: 24px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  animation: fadeInScale 0.3s ease-out forwards;
+  text-align: center;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #6a6f9c;
+  transition: color 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: #333;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #2e315a;
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.message {
+  font-size: 14px;
+  color: #4a4e8a;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.linkBox {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.linkInput {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+.copyBtn {
+  padding: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #5b57ff;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

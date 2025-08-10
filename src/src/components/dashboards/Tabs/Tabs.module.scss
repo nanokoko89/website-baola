@@ -1,0 +1,64 @@
+/* Tabs.module.scss */
+
+@use "sass:color";
+$primary-color: #5b57ff;
+$text-color: #1f1f47;
+$bg-tab: #f5f7ff;
+$border-radius: 0.75rem;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  margin-top: 80px;
+  margin-left: 240px;
+}
+
+.tabsContainer {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    margin-top: 80px;
+    margin-left: 0.5rem;
+  }
+
+  .tabsContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background-color: $bg-tab;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s, color 0.2s;
+
+  &.active {
+    background-color: $primary-color;
+    color: #ffffff;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #ffffff;
+    }
+  }
+
+  &:hover {
+    background-color: color.adjust($bg-tab, $lightness: 5%);
+  }
+}

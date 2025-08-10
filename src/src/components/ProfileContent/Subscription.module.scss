@@ -1,0 +1,112 @@
+$primary-color: #5b57ff; // Màu xanh đậm cho tiêu đề
+
+.container {
+  max-width: 800px;
+  //   margin: 0 auto;
+  padding: 0 20px;
+  color: $primary-color;
+  font-family: "Roboto", sans-serif;
+  min-width: 300px;
+}
+
+// Tiêu đề
+.title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $primary-color;
+  margin-bottom: 8px;
+}
+
+.card {
+  background-color: #f5f9fa;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cardSubtext {
+  font-size: 0.875rem;
+  color: #8a9ba8;
+  margin-top: 4px;
+}
+
+.cardPrice {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b2f6f;
+}
+
+.period {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.trialText {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  color: #1b2f6f;
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid #5b57ff;
+  border-radius: 6px;
+  background: transparent;
+  color: #5b57ff;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background-color: #5b57ff;
+  color: #ffffff;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.tableWrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.th,
+.td {
+  text-align: left;
+  padding: 12px 8px;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.875rem;
+}
+
+.th {
+  color: #5c6ac4;
+  font-weight: 600;
+}

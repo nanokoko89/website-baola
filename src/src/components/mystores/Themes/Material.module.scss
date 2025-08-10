@@ -1,0 +1,340 @@
+/* ----------------------------------------------
+   Material.module.scss
+   - Chứa toàn bộ style cho component Material
+---------------------------------------------- */
+
+.material-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* Khoảng cách giữa các card */
+  margin: 0 auto;
+  background-color: #f5f0fa;
+  padding: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Chung cho mọi .card */
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  height: auto; /* Để cho nội dung cao linh hoạt */
+}
+
+@media (max-width: 600px) {
+  .card {
+    flex-wrap: wrap;
+  }
+  .card-left,
+  .card-right {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+}
+
+/* 3 card đầu: ảnh trái chiếm 2/5 width */
+.card:not(.link-card) .card-left {
+  flex: 0 0 40%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Khu vực bên trái (ảnh) */
+.card-left {
+  overflow: hidden;
+  height: 100%;
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Khu vực bên phải (nội dung) */
+.card-right {
+  flex: 3;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  height: auto;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+/* ========== 1. HEADER ========== */
+.card-header {
+  // height: 150px;
+
+  background-color: transparent; /* Ảnh đã bao phủ */
+  display: flex;
+  min-height: 160px; /* Prevent overlap of content */
+}
+
+.header-right {
+  background-color: #ec6398; /* Màu hồng đậm (giống ảnh gốc) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+/* Tên Michelle Foucault */
+.header-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Dãy social icons */
+.social-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  .icon-wrapper {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+      transform: scale(1.1);
+    }
+
+    .icon {
+      color: #ffffff;
+      font-size: 18px;
+    }
+  }
+}
+
+/* ========== 2. CARD VIDEO ========== */
+.card-video {
+  background-color: #ec6398; /* Màu cam san hô */
+  min-height: 180px;
+}
+
+.video-right {
+  /* Padding đủ rộng ở tất cả các cạnh */
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Tiêu đề "Đặt Cuộc Gọi Video Với Tôi" */
+.video-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+/* Subtitle */
+.video-subtitle {
+  font-size: 14px;
+  color: #fff5f3;
+  margin-bottom: 8px;
+}
+
+/* Giá: FREE */
+.video-price {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.free {
+  color: #fff9a8; /* Màu vàng nhạt */
+}
+
+/* Nút "Find a Time" */
+.video-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-1px);
+  }
+
+  .arrow-icon {
+    margin-left: 6px;
+    font-size: 16px;
+  }
+}
+
+/* ========== 3. CARD COURSE ========== */
+.card-course {
+  background-color: #ec6398; /* Màu cam san hô */
+  height: auto; /* Để cho nội dung cao linh hoạt */
+}
+
+.course-right {
+  padding-left: 24px;
+  justify-content: flex-start;
+}
+
+/* Tiêu đề khóa học */
+.course-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+/* Mô tả khóa học */
+.course-desc {
+  font-size: 14px;
+  color: #ffdcd2; /* Màu hồng nhạt dành cho text */
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+/* Dòng giá và rating */
+.price-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  .current-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff9a8; /* Màu vàng nhạt */
+  }
+
+  .original-price {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: line-through;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #ffd666; /* Màu vàng nhạt */
+    color: #000000;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 6px;
+
+    .star-icon {
+      color: #000000;
+      font-size: 14px;
+      margin-right: 2px;
+    }
+  }
+}
+
+/* Chỉ hiển thị số lượng còn lại */
+.items-left {
+  font-size: 12px;
+  color: #ffe9dc;
+  margin-bottom: 12px;
+}
+
+/* Nút "Get Started" */
+.course-button {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+
+  &:hover {
+    background-color: #f2f2f2;
+    transform: translateY(-1px);
+  }
+
+  .arrow-icon {
+    margin-left: 6px;
+    font-size: 16px;
+  }
+}
+
+/* ========== 4 & 5. LINK CARD ========= */
+/* Dùng chung kiểu cho tất cả link-card */
+.link-card {
+  text-decoration: none;
+  color: inherit;
+  border-radius: 16px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.link-left {
+  flex: 0 0 100px; /* Nhỏ hơn so với ảnh card chính */
+  height: 80px;
+  overflow: hidden;
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.link-right {
+  background-color: #ec6398; /* Màu hồng đậm */
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.link-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link-icon {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.link-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Nếu bạn muốn giảm khoảng cách giữa các card, gỡ margin-top: 0 */
+.material-wrapper .card + .card {
+  margin-top: 0;
+}

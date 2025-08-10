@@ -1,0 +1,516 @@
+$primary-color: #ff5a4d; // Màu đỏ san hô
+@use "sass:color";
+$border-color: #e0e0e0;
+$background-light: #f9f9f9;
+$text-color: #333333;
+$error-color: #e74c3c;
+$tag-bg: #fafafa;
+$tag-border: #d0d0d0;
+
+/* Wrapper tổng */
+.wrapper {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: $text-color;
+  margin-bottom: 40px;
+}
+
+/* ===== 0. Khi chưa có nhóm: phần Giá & Kho chung đơn giản ===== */
+.single-wrapper {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.single-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.single-group .label {
+  font-size: 14px;
+  margin-bottom: 4px;
+
+  .required {
+    color: $error-color;
+    margin-right: 2px;
+  }
+}
+
+.input-single {
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ===== 1. Phần nhập nhóm phân loại ===== */
+.groups-wrapper {
+  margin-bottom: 24px;
+  background-color: #ffffff;
+  padding: 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+}
+
+.groups-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: $primary-color;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.note {
+  font-size: 13px;
+  color: #666666;
+}
+
+/* Mỗi nhóm phân loại */
+.group-item {
+  display: flex;
+  align-items: flex-start;
+  background-color: $background-light;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  position: relative; /* để đặt nút X */
+}
+
+/* Nút xoá cả nhóm (X) ở góc phải */
+.btn-remove-group {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  color: #888888;
+  cursor: pointer;
+  line-height: 0;
+  transition: color 0.2s ease;
+  padding: 0;
+}
+
+.btn-remove-group:hover {
+  color: $error-color;
+}
+
+/* Cột trái: Tên nhóm */
+.left {
+  flex: 0 0 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* Wrapper cho ô input tên group + char-count */
+.group-name-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group-name {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Char-count hiển thị "0/14" bên phải ô input */
+.char-count-group {
+  position: absolute;
+  right: 10px;
+  font-size: 12px;
+  color: #888888;
+}
+
+/* Thông báo lỗi khi để trống tên group */
+.error-text {
+  font-size: 12px;
+  color: $error-color;
+  margin-top: 4px;
+}
+
+/* Cột phải: Thêm/hiển thị danh sách tùy chọn */
+.right-values {
+  flex: 1;
+  margin-left: 24px;
+}
+
+.values-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Ô input giá trị (value) */
+.input-value {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Nút "+" để thêm value ngay (ở cuối ô input) */
+.btn-add-value {
+  margin-left: 8px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: $primary-color;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn-add-value:hover {
+  background-color: color.adjust($primary-color, $lightness: -10%);
+}
+
+/* Char-count hiển thị số ký tự đang gõ / 20 */
+.char-count {
+  margin-left: 8px;
+  font-size: 12px;
+  color: #888888;
+}
+
+/* Danh sách tag (tùy chọn) */
+.values-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 32px;
+}
+
+/* Mỗi thẻ "tùy chọn" */
+.value-tag {
+  display: flex;
+  align-items: center;
+  background-color: $tag-bg;
+  border: 1px solid $tag-border;
+  border-radius: 16px;
+  padding: 4px 8px;
+  font-size: 13px;
+  position: relative;
+}
+
+/* Biểu tượng handle để kéo thả */
+.drag-handle {
+  cursor: grab;
+  margin-right: 6px;
+  color: #888888;
+  font-size: 16px;
+  user-select: none;
+}
+
+/* Text của value */
+.value-text {
+  margin-right: 6px;
+}
+
+/* Nút xóa value */
+.btn-remove-value {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #888888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.btn-remove-value:hover {
+  color: $error-color;
+}
+
+/* DragOverlay: hiển thị ghost khi kéo */
+.drag-overlay {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: $tag-bg;
+  border: 1px solid color.adjust($tag-border, $lightness: -10%);
+}
+
+/* Nút thêm nhóm phân loại (dạng viền nét đứt) */
+.btn-add-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: 2px dashed $primary-color;
+  border-radius: 6px;
+  background: none;
+  color: $primary-color;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-add-group:hover {
+  background-color: rgba($primary-color, 0.05);
+}
+
+/* ===== 2. HÀNG ÁP DỤNG CHO TẤT CẢ PHÂN LOẠI ===== */
+.apply-all-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.apply-all-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 25%;
+}
+
+.apply-all-group .currency-symbol {
+  margin-right: 4px;
+  color: #555;
+}
+
+.input-apply {
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+  min-width: 100px;
+}
+
+#bulk-sku {
+  min-width: 140px;
+}
+
+.btn-apply-all {
+  width: 100%;
+  padding: 8px 16px;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-apply-all:hover {
+  background-color: color.adjust($primary-color, $lightness: -10%);
+}
+
+/* ===== 3. Phần áp dụng chung Giá / Kho (bulk cũ) ===== */
+.bulk-wrapper {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.bulk-group {
+  display: flex;
+  align-items: center;
+}
+
+.bulk-label {
+  font-size: 14px;
+  margin-right: 8px;
+  width: 80px;
+}
+
+.bulk-input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.currency-symbol {
+  margin-right: 4px;
+  color: #555555;
+}
+
+.input-bulk {
+  padding: 6px 10px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 120px;
+}
+
+/* ===== 4. Bảng biến thể ===== */
+.table-wrapper {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+}
+
+.variant-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.variant-table th,
+.variant-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid $border-color;
+  font-size: 14px;
+}
+
+.variant-table thead {
+  background-color: $background-light;
+}
+
+.th-image {
+  width: 100px;
+}
+
+.th-opt1,
+.th-opt2 {
+  width: 100px;
+}
+
+.th-price {
+  width: 160px;
+}
+
+.th-inventory {
+  width: 100px;
+}
+
+.th-sku {
+  width: 120px;
+}
+
+.th-action {
+  width: 60px;
+  text-align: center;
+}
+
+/* Ô "Thêm ảnh" */
+.add-image-box {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed $border-color;
+  border-radius: 6px;
+  background-color: $background-light;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.plus-icon {
+  font-size: 24px;
+  color: #888888;
+  margin-bottom: 4px;
+}
+
+.add-text-small {
+  font-size: 12px;
+  color: #888888;
+}
+
+.input-file-hidden {
+  display: none;
+}
+
+/* Thumbnail khi đã chọn ảnh */
+.thumb-single {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.thumb-single-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.btn-remove-thumb {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Ô input Giá / Kho / SKU trong bảng */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.currency {
+  margin-right: 4px;
+  color: #555555;
+}
+
+.input-cell {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Nút xóa row (×) */
+.btn-remove-row {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #888888;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.btn-remove-row:hover {
+  color: $error-color;
+}
+
+/* Khi chưa có variant nào (nhưng đã có ít nhất 1 nhóm) */
+.no-variant {
+  padding: 24px;
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+}

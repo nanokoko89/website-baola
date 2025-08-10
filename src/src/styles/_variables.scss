@@ -1,0 +1,81 @@
+:root {
+  --font-family-base: "Roboto", sans-serif;
+  /* Font scale based on the 16px browser default to ensure accessibility */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-h1: 2.488rem; /* ≈39.8px */
+  --font-size-h2: 2.074rem; /* ≈33.2px */
+  --font-size-h3: 1.728rem; /* ≈27.6px */
+  --font-size-body: var(--font-size-base);
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+
+  /* 4px-based spacing scale using relative units */
+  --spacing-1: 0.25rem; /* 4px */
+  --spacing-2: 0.5rem; /* 8px */
+  --spacing-3: 1rem; /* 16px */
+  --spacing-4: 1.5rem; /* 24px */
+  --spacing-5: 2rem; /* 32px */
+
+  --color-primary: #4f46e5;
+  --color-secondary: #9333ea;
+  --color-neutral: #f0f2ff;
+  --color-text: #1f1f47;
+  --color-text-secondary: #6b7280;
+  --color-text-light: #9aa5b1;
+  --color-danger: #e02424;
+  --color-bg: #ffffff;
+  --color-bg-hover: #e8ecff;
+  --color-border: #d1d5db;
+  --template-text-color: #000000;
+  --template-button-text-color: #000000;
+  --template-input-bg: #f3f6fd;
+  --template-input-border-color: rgba(41, 42, 51, 0.2);
+  --template-input-text-color: #607199;
+  --template-input-padding: 0.8125rem 1rem; /* 13px 16px */
+
+  --border-radius-sm: 0.25rem; /* 4px */
+  --border-radius-md: 0.5rem; /* 8px */
+  --box-shadow-sm: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.05); /* 0 1px 2px */
+}
+
+$font-family-base: var(--font-family-base);
+$font-size-base: var(--font-size-base);
+$font-size-sm: var(--font-size-sm);
+$font-size-xs: var(--font-size-xs);
+$font-size-h1: var(--font-size-h1);
+$font-size-h2: var(--font-size-h2);
+$font-size-h3: var(--font-size-h3);
+$font-size-body: var(--font-size-body);
+$font-weight-normal: var(--font-weight-normal);
+$font-weight-semibold: var(--font-weight-semibold);
+
+$spacing-1: var(--spacing-1);
+$spacing-2: var(--spacing-2);
+$spacing-3: var(--spacing-3);
+$spacing-4: var(--spacing-4);
+$spacing-5: var(--spacing-5);
+
+$color-primary: var(--color-primary);
+
+$color-secondary: var(--color-secondary);
+$color-neutral: var(--color-neutral);
+$color-text: var(--color-text);
+$text-secondary: var(--color-secondary);
+$color-text-light: var(--color-text-light);
+$color-danger: var(--color-danger);
+$color-bg: var(--color-bg);
+$color-bg-hover: var(--color-bg-hover);
+$color-border: var(--color-border);
+$template-text-color: var(--template-text-color);
+$template-button-text-color: var(--template-button-text-color);
+$template-input-bg: var(--template-input-bg);
+$template-input-border-color: var(--template-input-border-color);
+$template-input-text-color: var(--template-input-text-color);
+$template-input-padding: var(--template-input-padding);
+
+$border-radius-sm: var(--border-radius-sm);
+$border-radius-md: var(--border-radius-md);
+$box-shadow-sm: var(--box-shadow-sm);

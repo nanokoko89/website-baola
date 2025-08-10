@@ -1,0 +1,290 @@
+.container {
+  height: auto;
+  width: 100%;
+  background-color: var(--template-color-secondary);
+  min-height: 720px;
+}
+
+.material-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+  font-family: var(--template-font-family, "Roboto", sans-serif);
+  padding: 16px;
+  width: 100%;
+  height: auto;
+  color: var(--template-text-color);
+  max-width: 500px;
+}
+
+/* Chung cho mọi .card */
+.card {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  // border: 3px solid rgb(10, 37, 212);
+}
+
+/* Responsive: wrap khi màn hình nhỏ */
+@media (max-width: 600px) {
+  .card {
+    flex-wrap: wrap;
+  }
+  .card-left,
+  .card-right {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+}
+
+/* 3 card đầu: ảnh trái chiếm 2/5 width */
+.card:not(.link-card) .card-left {
+  flex: 0 0 40%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* 2 link-cards cuối: ảnh trái kích thước cố định 60x60 */
+.link-left {
+  flex: 0 0 60px;
+  min-width: 0;
+  height: 60px;
+  overflow: hidden;
+}
+
+/* Xử lý chung ảnh */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Nội dung bên phải */
+.card-right {
+  flex: 1;
+  min-width: 0;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 8px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+/* ========== 1. HEADER ========== */
+.card-header {
+  background-color: transparent;
+  display: flex;
+  min-height: 160px;
+}
+.header-right {
+  background-color: var(--template-color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+}
+.header-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--template-button-text-color);
+  margin: 0;
+}
+
+.bio {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--template-button-text-color);
+  margin: 0;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.social-icons .icon-wrapper {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.social-icons .icon-wrapper:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+.social-icons .icon {
+  color: var(--template-button-text-color);
+  font-size: 18px;
+}
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+/* ========== 2. CARD VIDEO ========== */
+.card-video {
+  background-color: var(--template-color-primary);
+}
+.video-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.video-title {
+  font-size: 18px;
+  font-weight: 700;
+  // color: #ffffff;
+  color: var(--template-button-text-color);
+}
+.video-subtitle {
+  font-size: 14px;
+  // color: #fff5f3;
+  color: var(--template-button-text-color);
+}
+.video-price {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.free {
+  color: var(--template-color-primary);
+}
+.video-button {
+  background-color: var(--template-color-primary);
+  color: var(--template-button-text-color);
+  border: 1px solid var(--template-button-text-color);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.video-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.video-button .arrow-icon {
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+/* ========== 3. CARD COURSE ========== */
+.card-course {
+  background-color: var(--template-color-primary);
+}
+.course-right {
+  padding-left: 24px;
+  justify-content: flex-start;
+}
+.course-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.course-desc {
+  font-size: 14px;
+  color: #ffdcd2;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+.price-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.price-rating .current-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--template-color-primary);
+}
+.price-rating .original-price {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: line-through;
+}
+.price-rating .rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffd666;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+.price-rating .star-icon {
+  color: #000000;
+  font-size: 14px;
+  margin-right: 2px;
+}
+.items-left {
+  font-size: 12px;
+  color: #ffe9dc;
+  margin-bottom: 12px;
+}
+.course-button {
+  background-color: var(--template-color-primary);
+  color: var(--template-button-text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.course-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+.course-button .arrow-icon {
+  margin-left: 6px;
+  font-size: 16px;
+}
+
+/* ========== 4 & 5. LINK CARD ========== */
+.link-card {
+  text-decoration: none;
+  color: inherit;
+}
+.link-right {
+  background-color: var(--template-color-primary);
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+.link-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.link-icon {
+  font-size: 20px;
+  color: #ffffff;
+}
+.link-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}

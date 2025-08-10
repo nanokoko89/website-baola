@@ -1,0 +1,219 @@
+/*
+ * Styles for the custom dashboard component. These rules use CSS
+ * variables, Flexbox and Grid to build a modern, responsive layout.
+ * Feel free to adjust the color palette or spacing variables to
+ * harmonize with your brand guidelines.
+ */
+
+:root {
+  --primary-color: #3f51b5;
+  --accent-color: #fdd835;
+  --background-color: #f9f9fc;
+  --sidebar-bg: #ffffff;
+  --text-color: #333333;
+  --muted-color: #888888;
+  --border-color: #e0e0e0;
+}
+
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  span {
+    color: var(--text-color);
+    font-weight: 400;
+  }
+}
+
+.nav {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+  &:hover {
+    background: var(--background-color);
+  }
+}
+
+.navItem.active {
+  background: rgba(63, 81, 181, 0.1);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.navIcon {
+  font-size: 1rem;
+}
+
+/* Main area */
+.main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pageTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+  color: #fff;
+  background: var(--primary-color);
+  &:hover {
+    /* Slightly darken the primary color on hover */
+    background: #36449b;
+  }
+}
+
+.actionButton.secondary {
+  background: var(--accent-color);
+  color: var(--text-color);
+  &:hover {
+    /* Darken accent on hover */
+    background: #e6c22f;
+  }
+}
+
+/* Summary cards */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.summaryCard {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cardIcon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryLabel {
+  font-size: 0.8rem;
+  color: var(--muted-color);
+  margin-bottom: 0.15rem;
+}
+
+.summaryValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+/* Activity section */
+.activitySection {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.activityTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.activityTable th,
+.activityTable td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.activityTable th {
+  font-weight: 600;
+  color: var(--muted-color);
+}
+
+.activityTable td {
+  color: var(--text-color);
+}
+
+.activityTable tr:last-child td {
+  border-bottom: none;
+}

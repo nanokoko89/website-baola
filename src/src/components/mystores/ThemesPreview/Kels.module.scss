@@ -1,0 +1,287 @@
+.app {
+  height: auto;
+  width: 100%;
+  // background-image: linear-gradient(
+  //   var(--template-color-primary),
+  //   var(--template-color-secondary)
+  // );
+  // background-size: 100% 720px;
+  // background-repeat: repeat-y;
+  min-height: 720px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: #f4e9e9; /* Màu nền hồng nhạt */
+  color: var(--template-text-color);
+  font-family: var(--template-font-family, "Roboto", sans-serif);
+  // padding: 16px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Giới hạn tổng component chỉ tối đa 500px */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  /* Nếu muốn thêm padding bên trong (ví dụ padding hai bên 16px) */
+  padding: 0 16px;
+}
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+/* Banner */
+.banner {
+  width: 100%;
+  overflow: hidden;
+  height: 200px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Header chứa tên và icon */
+.headerInfo {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.nameSection {
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.handle {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 12px;
+}
+
+.iconLink {
+  color: var(--template-text-color);
+  font-size: 24px;
+  transition: color 0.2s;
+}
+
+.iconLink:hover {
+  color: var(--template-color-primary);
+}
+
+.icon {
+  vertical-align: middle;
+}
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 24px 0;
+}
+
+/* Cards container */
+.cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Định nghĩa chung cho các card */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Mặc định trên mobile xếp cột */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card lớn (standard) */
+.cardMain {
+  /* Trên màn nhỏ: flex-direction: column (mặc định của `.card`) */
+  @media (min-width: 768px) {
+    flex-direction: row; /* Trên màn to (>768px): ảnh trái, nội dung phải */
+  }
+}
+
+/* Nếu có thêm lớp .flipped, trên màn to (>768px) đảo ngược */
+.flipped {
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+}
+
+/* Phần ảnh trong card */
+.cardImageWrapper {
+  flex-shrink: 0;
+  width: 100%;
+  max-height: 250px; /* Giảm chiều cao để vừa với 500px tổng */
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    width: 40%;
+    max-height: none;
+  }
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Phần nội dung chữ của card */
+.cardContent {
+  padding: 16px; /* Giảm padding nhẹ để cân với 500px */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardTitle {
+  font-size: 1.25rem; /* Giảm kích thước font cho vừa khung nhỏ */
+  margin: 0;
+  font-weight: 600;
+  color: #555;
+}
+
+.cardSubtitle {
+  margin-top: 8px;
+  line-height: 1.5;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* Rating sao */
+.rating {
+  margin-top: 10px;
+}
+
+.star {
+  color: #f5c518; /* Màu vàng sao */
+  font-size: 1rem;
+  margin-right: 3px;
+}
+
+.starInactive {
+  color: #ccc; /* Sao không active */
+}
+
+/* Giá */
+.price {
+  margin-top: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.currentPrice {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--template-color-primary);
+}
+
+.oldPrice {
+  font-size: 0.9rem;
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* Nút hành động */
+.btnAction {
+  margin-top: 12px;
+  align-self: start;
+  background-color: transparent;
+  border: 2px solid var(--template-color-primary);
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 4px;
+  color: var(--template-color-primary);
+}
+
+.btnAction:hover {
+  opacity: 0.9;
+}
+
+/* Podcast Box ở cuối */
+.podcastBox {
+  width: 100%;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.podcastBox:hover {
+  background-color: #f0f0f0;
+}
+
+.podcastContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.podcastAvatarWrapper {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.podcastAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.podcastText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1f1f1f;
+}
+
+.podcastArrow {
+  font-size: 1.3rem;
+  color: #1f1f1f;
+  transition: transform 0.2s;
+}
+
+.podcastBox:hover .podcastArrow {
+  transform: translateX(4px);
+}

@@ -1,0 +1,214 @@
+.button {
+  border: 0.1px solid var(--template-text-color);
+
+  border-radius: 10px;
+  padding: 16px 12px;
+  margin-bottom: 1rem;
+  background-color: var(--template-color-secondary);
+  color: var(--template-text-color);
+  display: flex;
+  // flex-direction: column;
+  align-items: stretch;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  overflow: hidden;
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    // margin-bottom: 0.5rem;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    gap: 2px;
+    // align-items: center;
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .price {
+    font-weight: 600;
+    color: var(--template-color-primary);
+  }
+
+  .learnMore {
+    color: var(--template-color-primary);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+}
+
+.callout {
+  border: 0.1px solid var(--template-text-color);
+
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 1rem;
+  background-color: var(--template-color-secondary);
+  color: var(--template-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  .overlay {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.5) 75%,
+      #141212 100%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 2px;
+    // align-items: center;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    z-index: 1000;
+  }
+
+  .top {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+
+  .price {
+    font-weight: 600;
+    color: var(--template-color-primary);
+  }
+
+  .learnMore {
+    color: var(--template-color-primary);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .btn {
+    background-color: var(--template-color-primary);
+    color: var(--template-button-text-color);
+    border: none;
+    padding: 16px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.preview {
+  border: 0.1px solid var(--template-text-color);
+
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 1rem;
+  background-color: var(--template-color-secondary);
+  color: var(--template-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  cursor: pointer;
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    // margin-bottom: 0.5rem;
+  }
+
+  .content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    gap: 2px;
+    // align-items: center;
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .top {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .price {
+    font-weight: 600;
+    color: var(--template-color-primary);
+  }
+
+  .learnMore {
+    color: var(--template-color-primary);
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  .btn {
+    background-color: var(--template-color-primary);
+    color: var(--template-button-text-color);
+    border: none;
+    padding: 16px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

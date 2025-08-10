@@ -1,0 +1,76 @@
+/* src/components/TwoColumnLayout.module.scss */
+
+/* --- Biến màu cơ bản --- */
+$primary-purple: #7c3aed;
+$light-purple-bg: #e9d5ff;
+$text-dark: #1e1e1e;
+$text-gray: #4b5563;
+$border-gray: #e5e7eb;
+$white: #ffffff;
+$shadow-sm: rgba(0, 0, 0, 0.05);
+
+.wrapper {
+  padding: 24px;
+  margin: 0 auto;
+  width: calc(100vw - 240px);
+  margin-left: 240px;
+  margin-top: 60px;
+
+  .tabsHeader {
+    display: flex;
+    gap: 8px;
+    background-color: $white;
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 1px 2px $shadow-sm;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 16px;
+    .tabsHeader {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+    .tabItem {
+      white-space: nowrap;
+    }
+  }
+
+  /* Mỗi tab: */
+  .tabItem {
+    // flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-gray;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, font-weight 0.2s;
+
+    &:hover {
+      background-color: #f3f4f6;
+    }
+
+    &.active {
+      border: 2px solid $primary-purple;
+
+      color: $primary-purple;
+      // font-weight: 600;
+    }
+  }
+
+  /* Khung chứa nội dung của tab active */
+  .tabContent {
+    min-height: calc(100vh - 200px);
+    background-color: $white;
+    flex: 1;
+    padding: 0 20px;
+  }
+}

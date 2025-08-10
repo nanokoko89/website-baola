@@ -1,0 +1,176 @@
+// src/components/Notifications/Notifications.module.scss
+
+@use "sass:color";
+
+// --- Biến SCSS (có thể tùy chỉnh) ---
+$primary-color: #5b57ff; // Màu xanh đậm cho tiêu đề
+$subTitle-color: #5b57ff; // Màu xanh dương cho subtitle
+$input-border: #cbd5e1; // Màu viền cho checkbox
+$background: #ffffff; // Màu nền chính
+$bg-card: #f9fafb; // Màu nền nhạt cho mục chưa đọc
+$text-color: #374151; // Màu chữ chính
+$text-muted: #6b7280; // Màu chữ phụ
+$border-color: #e2e8f0; // Màu đường viền
+$button-hover: #5b57ff; // Màu khi hover icon
+
+// Container chính của trang Thông báo
+.notifications {
+}
+
+// Tiêu đề chính
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 16px;
+
+  .iconTitle {
+    margin-right: 8px;
+    font-size: 1.4rem;
+  }
+}
+
+// --- Phần Cài đặt nhận thông báo ---
+.settingsSection {
+  margin-bottom: 32px;
+
+  .subTitle {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $subTitle-color;
+    margin-bottom: 12px;
+
+    .iconSub {
+      margin-right: 6px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .settingsGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .settingItem {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      color: $text-color;
+
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: $subTitle-color; // màu checkbox khi checked
+        cursor: pointer;
+      }
+
+      .settingLabel {
+        user-select: none;
+      }
+
+      &:hover {
+        color: color.adjust($text-color, $lightness: -8%);
+      }
+    }
+  }
+}
+
+// --- Phần Danh sách Thông báo ---
+.listSection {
+  margin-bottom: 0;
+
+  .subTitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $subTitle-color;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .noNotification {
+    font-size: 1rem;
+    color: $text-muted;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .notificationList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .notificationItem {
+    border: 1px solid $border-color;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: $background;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    position: relative;
+
+    &.unread {
+      background-color: $bg-card; // nền nhạt nếu chưa đọc
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+    }
+
+    &.read {
+      background-color: $background;
+    }
+  }
+
+  .notificationContent {
+    padding: 16px;
+
+    .titleRow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .notifTitle {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: $text-color;
+    }
+
+    .markButton {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: $text-muted;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $button-hover;
+      }
+
+      .iconMark {
+        font-size: 1.2rem;
+      }
+    }
+
+    .notifMessage {
+      font-size: 0.95rem;
+      color: $text-color;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .notifTime {
+      font-size: 0.85rem;
+      color: $text-muted;
+      float: right;
+    }
+  }
+}

@@ -1,0 +1,180 @@
+// src/components/Home/Home.module.scss
+
+@use "sass:color";
+@use "../../styles/variables" as *;
+
+// Màu sắc chính (bạn có thể điều chỉnh cho giống thiết kế gốc)
+$color-purple: #635bff;
+$color-green: #2effc9;
+$color-white: #ffffff;
+$color-light-gray: #f5f5f5;
+$color-dark-text: #1f1f1f;
+$color-muted-text: rgba(255, 255, 255, 0.8);
+
+// Reset cơ bản cho home
+.home {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $color-purple;
+  color: $color-white;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+  overflow: hidden;
+
+  // Header
+  &__header {
+    padding: 1.25rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Hero Section
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5rem;
+  min-height: 100vh;
+  position: relative;
+
+  &__content {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: $spacing-4;
+
+    & .hero__title {
+      font-size: 4rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin: 0;
+      color: $color-white;
+    }
+
+    & .hero__subtitle {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: $color-muted-text;
+      max-width: 25rem;
+
+      em {
+        font-style: italic;
+        font-weight: 600;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__illustration {
+    flex: 1;
+    position: relative;
+    min-height: 37.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.btn-read-more {
+  margin-top: $spacing-3;
+  background-color: $color-green;
+  color: $color-dark-text;
+  font-size: 1.125rem;
+  padding: 0.875rem 2.25rem;
+  border-radius: 1.875rem;
+  border: none;
+  font-weight: 600;
+
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-2;
+
+  width: fit-content;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: color.adjust($color-green, $lightness: -5%);
+  }
+
+  .arrow {
+    font-size: 1.125rem;
+    transition: transform 0.2s;
+  }
+
+  &:hover {
+    opacity: 0.9;
+
+    .arrow {
+      transform: translateX($spacing-1);
+    }
+  }
+}
+
+// Các icon-circles xung quanh
+.icon-circle {
+  position: absolute;
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-2;
+  color: $color-white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__label {
+    font-weight: 700;
+  }
+
+  &--calendar {
+    top: 7.5rem;
+    right: 1.25rem;
+  }
+
+  &--downloads {
+    bottom: 12.5rem;
+    left: 0.625rem;
+  }
+
+  &--courses {
+    bottom: 7.5rem;
+    right: 3.75rem;
+  }
+}
+
+// Responsive styles
+@media (max-width: 48rem) {
+  .hero {
+    flex-direction: column;
+    padding: 2.5rem 1.25rem;
+    text-align: center;
+
+    &__content {
+      max-width: 100%;
+      align-items: center;
+
+      .hero__title {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__illustration {
+      display: none;
+    }
+  }
+}

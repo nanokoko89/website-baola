@@ -1,0 +1,172 @@
+/* src/components/Pricing/Pricing.module.scss */
+
+/* Màu nền chung của trang */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px;
+  background-color: #f9f9fc;
+}
+
+/* Phần tiêu đề */
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f215a; /* Màu chữ đậm */
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #4b4b7a; /* Màu chữ phụ */
+  margin-top: 8px;
+}
+
+/* Card trắng chứa danh sách */
+.card {
+  width: 100%;
+  max-width: 480px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dòng tính năng (featureRow) */
+.featureRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #f5f5fa;
+  }
+}
+
+/* Khung icon bên trái */
+.iconWrapper {
+  flex: 0 0 32px;
+  font-size: 20px;
+  color: #3e3e8c; /* Màu icon */
+}
+
+/* Icon nhỏ ở các dòng dưới */
+.smallIcon {
+  font-size: 14px !important;
+}
+
+/* Khung chứa tiêu đề và sub */
+.textWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+}
+
+/* Tiêu đề của feature */
+.featureTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f215a;
+  line-height: 1.2;
+}
+
+/* Text nhỏ (sub) bên dưới */
+.featureSub {
+  font-size: 12px;
+  color: #8f8faa;
+  margin-top: 4px;
+}
+
+/* Giá tiền của feature */
+.featurePrice {
+  flex: 0 0 auto;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f215a;
+}
+
+/* Đường phân cách */
+.divider {
+  height: 1px;
+  background-color: #e0e0eb;
+  margin: 8px 0 8px 0;
+  width: 100%;
+}
+
+/* Dòng "Chi phí bạn sẽ phải trả nếu không dùng" */
+.alternativeRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+}
+
+.alternativeText {
+  flex: 1;
+  font-size: 14px;
+  color: #b0b0c5;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.alternativePrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: #eb4d4b; /* Màu đỏ */
+}
+
+/* Dòng "Tham gia gia đình Stan" */
+.ctaRow {
+  display: flex;
+  align-items: center;
+  padding: 12px 32px;
+  margin-top: 8px;
+}
+
+.ctaText {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f215a;
+  margin-left: 8px;
+}
+
+.ctaPrice {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f215a;
+}
+
+/* Nút "Bắt đầu dùng thử" */
+.btnTrial {
+  margin-top: 24px;
+  background-color: #2d2d5c;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 40px;
+  padding: 14px 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btnTrial:hover {
+  background-color: #252554;
+}
+
+.arrow {
+  font-size: 18px;
+  margin-left: 8px;
+}

@@ -1,0 +1,53 @@
+/* MaxAttendeesInput.module.scss */
+
+/* Container tổng quát */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* hoặc tuỳ chỉnh width ở component cha */
+  font-family: "Roboto", sans-serif;
+}
+
+/* Description (mô tả phụ) */
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #667085; /* Xám xanh */
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.4;
+}
+
+/* Wrapper cho input + suffix */
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Input chính */
+.inputField {
+  width: 100%;
+  padding: 12px 100px 12px 12px; /* left:12px, right: đủ rộng cho suffix */
+  font-size: 16px;
+  color: #1e2a78;
+  border: 1px solid #d2d5dc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Khi focus vào input, viền đổi màu tím */
+.inputField:focus {
+  border-color: #7c3aed;
+}
+
+/* Suffix (chữ “Attendees” nằm bên trong input nhưng cố định bên phải) */
+.suffix {
+  position: absolute;
+  top: 50%;
+  right: 12px; /* Cách viền phải 12px */
+  transform: translateY(-50%);
+  font-size: 16px;
+  font-weight: 500;
+  color: #667085; /* Cùng tông xám xanh với description */
+  pointer-events: none; /* Không cho phép click vào text suffix */
+}

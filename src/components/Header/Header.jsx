@@ -49,6 +49,48 @@ const demoItems = [
     title: "Beach Talk Radio",
     subtitle: "A Dinky Little Podcast",
   },
+  {
+    id: 1,
+    rank: 1,
+    avatar: "https://i.pravatar.cc/80?img=11",
+    title: "Simple Politics",
+    subtitle: "Helping people have better conversations about politics",
+  },
+  {
+    id: 2,
+    rank: 2,
+    avatar: "https://i.pravatar.cc/80?img=32",
+    title: "Cara",
+    subtitle: "building a new platform for artists",
+  },
+  {
+    id: 3,
+    rank: 3,
+    avatar: "https://i.pravatar.cc/80?img=48",
+    title: "Beach Talk Radio",
+    subtitle: "A Dinky Little Podcast",
+  },
+  {
+    id: 1,
+    rank: 1,
+    avatar: "https://i.pravatar.cc/80?img=11",
+    title: "Simple Politics",
+    subtitle: "Helping people have better conversations about politics",
+  },
+  {
+    id: 2,
+    rank: 2,
+    avatar: "https://i.pravatar.cc/80?img=32",
+    title: "Cara",
+    subtitle: "building a new platform for artists",
+  },
+  {
+    id: 3,
+    rank: 3,
+    avatar: "https://i.pravatar.cc/80?img=48",
+    title: "Beach Talk Radio",
+    subtitle: "A Dinky Little Podcast",
+  },
 ];
 
 export default function Header() {

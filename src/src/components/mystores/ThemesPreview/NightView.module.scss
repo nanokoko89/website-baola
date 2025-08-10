@@ -1,0 +1,274 @@
+.app {
+  height: auto;
+  width: 100%;
+  min-height: 720px;
+
+  background-color: var(--template-color-secondary);
+
+  @media (min-width: 768px) {
+    .app {
+      width: 100vw;
+      margin: 0 auto;
+      height: auto;
+    }
+  }
+}
+
+.night-wrapper {
+  font-family: var(--template-font-family, "Roboto", sans-serif);
+  color: var(--template-text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 16px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 500px;
+
+  @media (min-width: 768px) {
+    .night-wrapper {
+      flex-direction: row;
+    }
+  }
+}
+
+/* ====== Header: Avatar + Tên + Social ====== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Vòng bao avatar, bo góc tất cả để avatar vuông bo tròn */
+.avatar-wrapper {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tên lớn căn giữa */
+.name {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--template-text-color);
+  margin: 0;
+}
+
+.bio {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--template-text-color);
+  margin: 0;
+}
+
+/* Hàng social icons: bo tròn và đường viền neon */
+.social-icons {
+  display: flex;
+  gap: 16px;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--template-color-primary); /* Màu neon mint */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.icon-btn:hover {
+  background-color: rgba(50, 255, 218, 0.1);
+  transform: scale(1.1);
+}
+
+.icon {
+  color: var(--template-color-primary);
+  font-size: 20px;
+}
+
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+
+/* ====== Card Workshop ====== */
+.card {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #11112b;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+/* Wrapper cho ảnh lớn (để bo ở 2 góc phía trên) */
+.card-image-wrapper {
+  width: 100%;
+  height: 240px;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Nội dung bên dưới ảnh */
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  // background-color: black;
+}
+
+/* Tiêu đề workshop */
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Mô tả ngắn */
+.card-desc {
+  font-size: 14px;
+  color: #cccccc;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Dòng giá và rating */
+.price-rating {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Giá hiện tại màu neon mint */
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--template-color-primary);
+}
+
+/* Rating nền vàng, chữ đen */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffd700;
+  color: #11112b;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.star-icon {
+  color: #11112b;
+  font-size: 16px;
+}
+
+/* Nút chính màu neon mint */
+.btn-primary {
+  margin-top: 8px;
+  background-color: var(--template-color-primary);
+  color: var(--template-button-text-color);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.arrow {
+  font-size: 18px;
+}
+
+/* ====== Danh sách link phụ ====== */
+.link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* Mỗi link là 1 thẻ <a> */
+.link-card {
+  display: flex;
+  align-items: center;
+  background-color: #11112b;
+  border: 2px solid var(--template-color-primary);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: background-color 0.2s, border-color 0.2s;
+  text-decoration: none;
+}
+
+/* Ảnh nhỏ bên trái */
+.link-img-wrapper {
+  flex: 0 0 80px;
+  height: 80px;
+  overflow: hidden;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.link-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Phần text và giá bên phải */
+.link-text-wrapper {
+  flex: 1;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Tiêu đề link */
+.link-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Giá màu neon mint */
+.link-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--template-color-primary);
+}

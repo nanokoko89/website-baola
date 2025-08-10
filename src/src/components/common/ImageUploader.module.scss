@@ -1,0 +1,113 @@
+/* File: src/components/ImageUploader/ImageUploader.module.scss */
+
+@use "sass:color";
+
+/* Biến chung */
+$primary-color: #5b57ff;
+$border-color: #cbd5e1;
+$font-family: "Roboto", sans-serif;
+$text-placeholder: #a0aec0;
+
+/* Uploader chính */
+.uploaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 200px;
+  padding: 16px;
+  border: 2px dashed $border-color;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  font-family: $font-family;
+  position: relative;
+  box-sizing: border-box;
+
+  &:hover {
+    border-color: color.adjust($border-color, $lightness: -10%);
+  }
+}
+
+/* Thumbnail */
+.thumbnailWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+/* Icon edit */
+.editIcon {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: #dddddd;
+    transition: fill 0.2s ease;
+  }
+}
+
+/* Phần text & chứa nút ImagePicker */
+.infoWrapper {
+  flex-grow: 1;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4b4b4b;
+  margin: 0;
+}
+
+.dimensions {
+  font-size: 14px;
+  color: $text-placeholder;
+  margin: 4px 0 0 0;
+}
+
+/* Lưu ý: Các style liên quan modal, upload area, grid ảnh... 
+   đã được chuyển sang ImagePicker.module.scss, nên ở đây không cần. */

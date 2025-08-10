@@ -1,0 +1,158 @@
+/* ===== File: src/components/ImageEditor/ImageEditor.module.scss ===== */
+
+/* 1. Overlay (nền mờ toàn màn hình) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* 2. Khung modal chính */
+.modal {
+  width: 90%;
+  max-width: 500px; /* Giới hạn rộng tối đa 500px */
+  margin-top: 10vh; /* Cách đỉnh màn hình 10vh */
+  margin-bottom: 20vh; /* Cách đáy màn hình 20vh */
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* 3. Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px; /* Đã giảm padding so với trước */
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.title {
+  font-size: 18px; /* Giảm chữ để cân với modal thấp hơn */
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.2s;
+}
+
+.closeBtn:hover {
+  color: #333;
+}
+
+/* 4. Vùng ngoài của crop: căn giữa và thêm 20px viền trắng 2 bên */
+.cropOuterContainer {
+  display: flex;
+  justify-content: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px; /* Viền trắng trái */
+  padding-right: 20px; /* Viền trắng phải */
+  background-color: #fff;
+}
+
+/* 5. Vùng crop chính (vuông) */
+.cropContainer {
+  position: relative;
+  width: 100%; /* Chiếm hết chiều ngang còn lại (modal - 40px viền) */
+  padding-top: 100%; /* Tạo tỉ lệ 1:1 để thành ô vuông */
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/*
+  Lưu ý: Ở đây ta KHÔNG can thiệp để ép mask tròn lệch về góc nào cả.
+  React-Easy-Crop khi `cropShape="round"` sẽ tự động vẽ mask tròn ở giữa cropContainer.
+
+  ------> Bỏ hẳn phần CSS can thiệp top/left cho mask cũ. <------
+*/
+
+/* 6. Controls: slider zoom + nút “−” / “＋” */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background-color: #f7f7f7;
+}
+
+.zoomBtn {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  color: #5b57ff;
+  cursor: pointer;
+  margin: 0 8px;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.zoomBtn:hover {
+  color: #3f3ae8;
+}
+
+.slider {
+  width: 200px; /* Thu nhỏ slider cho modal thấp */
+  cursor: pointer;
+}
+
+/* 7. Footer: hai nút Cancel & Use this photo */
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 20px;
+  background-color: #fff;
+  border-top: 1px solid #e5e5e5;
+}
+
+.btnCancel {
+  font-size: 14px;
+  padding: 8px 16px;
+  border: 1px solid #5b57ff;
+  background-color: #fff;
+  color: #5b57ff;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 12px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btnCancel:hover {
+  background-color: #f0f0ff;
+  color: #3f3ae8;
+}
+
+.btnConfirm {
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #5b57ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btnConfirm:hover {
+  background-color: #4b47d5;
+}

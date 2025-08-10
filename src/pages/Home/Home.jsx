@@ -192,7 +192,7 @@ export default function Home() {
           thứ dễ hơn bạn nghĩ.
         </p>
         <a href="#" className={cx("btn", "btn-cta")}>
-          Băt đầu trang của tôi
+          Bắt đầu trang của tôi
         </a>
         <p className={cx("muted")}>Nó miễn phí và chỉ mất chưa đầy một phút!</p>
       </main>

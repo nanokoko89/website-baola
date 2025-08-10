@@ -1,0 +1,43 @@
+.toggleWrapper {
+  display: inline-block;
+  width: auto;
+  background-color: rgb(242, 244, 248);
+  border-radius: 9999px;
+  //   padding: 4px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgb(242, 244, 248);
+  color: rgb(104, 117, 161);
+}
+
+.toggleContainer {
+  position: relative;
+  display: inline-flex;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: #4f46e5;
+  border-radius: 9999px;
+  transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.tabButton {
+  position: relative;
+  z-index: 2;
+  padding: 12px 16px;
+  border-radius: 9999px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+  font-size: 16px;
+}
+
+.tabActive {
+  color: white;
+}

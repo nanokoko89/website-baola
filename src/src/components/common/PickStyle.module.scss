@@ -1,0 +1,68 @@
+/* PickStyle.module.scss */
+$primary-color: #1e2a5c;
+$bg-selected: #f0f3fa;
+$border-color: #e2e8f0;
+$badge-bg: #5458f7;
+$badge-color: #fff;
+
+.pickStyle-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  color: #1e2a5c;
+}
+
+.options-list {
+  display: flex;
+  gap: 12px;
+}
+
+.option-card {
+  // flex: 1;
+  min-width: 100px;
+  padding: 16px 8px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  &.active {
+    background-color: $bg-selected;
+    border-color: $primary-color;
+  }
+
+  .icon {
+    font-size: 24px;
+    color: $primary-color;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .label {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: $badge-bg;
+    color: $badge-color;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}

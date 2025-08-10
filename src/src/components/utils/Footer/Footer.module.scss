@@ -1,0 +1,137 @@
+/* src/components/Footer/Footer.module.scss */
+
+@use "sass:color";
+
+$icon-bg: #1c1f4a; // nền tròn cho icon mạng xã hội
+$icon-color: #ffffff; // màu icon
+$brand-color: #1c1f4a; // màu chữ thương hiệu
+$link-color: #1c1f4a; // màu chữ các link
+$link-hover: #5f4bff; // màu hover cho link
+$footer-bg: #f2f6fa; // màu nền của footer
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+
+.container {
+  width: 100%;
+  background-color: $footer-bg;
+  padding: $spacing-md 0;
+}
+
+.footer-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-md 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+  /* Nếu muốn giới hạn chiều ngang, thêm max-width và margin: auto */
+  /* max-width: 1200px;
+     margin: 0 auto; */
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 2;
+}
+
+/* 1. Social icons bên trái */
+.social-icons {
+  display: flex;
+  gap: $spacing-sm;
+
+  .icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $icon-bg;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: $icon-color;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: color.adjust($icon-bg, $lightness: -10%);
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+/* 2. Thương hiệu ở giữa */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  /* Để brand nằm canh giữa theo chiều dọc, chúng ta dùng margin-top tự điều chỉnh */
+  margin-top: 12px;
+
+  .brand-icon {
+    font-size: 20px; /* nếu là emoji hoặc SVG, có thể điều chỉnh */
+  }
+
+  .brand-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: $brand-color;
+  }
+}
+
+/* 3. Menu bên phải (dạng dọc) */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  flex: 1;
+
+  .link-item {
+    font-size: 0.9375rem;
+    color: $link-color;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $link-hover;
+    }
+  }
+}
+
+/* Responsive: trên mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: $spacing-md $spacing-sm;
+    gap: $spacing-md;
+  }
+
+  .social-icons {
+    order: 1;
+  }
+
+  .brand {
+    order: 2;
+  }
+
+  .links {
+    order: 3;
+    align-items: center;
+    text-align: center;
+    gap: $spacing-xs;
+
+    .link-item {
+      font-size: 0.875rem;
+    }
+  }
+}

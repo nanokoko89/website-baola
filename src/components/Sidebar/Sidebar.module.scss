@@ -1,0 +1,115 @@
+:root {
+  --sb-width: 312px; /* sát ảnh */
+  --pad-x: 24px;
+  --pad-y: 16px;
+  --item-h: 48px;
+  --radius: 12px;
+  --text: #0f0f0f;
+  --muted: #7f7f86;
+  --pill: #f4f4f4; /* nền active/hover */
+}
+
+.wrap {
+  width: var(--sb-width);
+  height: 100vh;
+  background: #fff;
+  padding: 18px var(--pad-x) 28px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.brand {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding-left: 6px;
+}
+
+.nav {
+  flex: 1;
+  overflow: auto;
+  padding-right: 4px; /* để cuộn không lệch */
+}
+
+.section {
+  & + & {
+    margin-top: 6px;
+  }
+}
+
+.heading {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  margin: 18px 0 8px;
+  padding-left: 6px;
+  text-transform: uppercase;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navItem {
+  width: 100%;
+  height: var(--item-h);
+  padding: 0 var(--pad-x) 0 6px;
+  border: 0;
+  background: transparent;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 120ms ease;
+
+  &:hover {
+    background: var(--pill);
+  }
+  &.active {
+    background: var(--pill);
+  }
+}
+
+.left {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  display: inline-block;
+}
+
+.label {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.after {
+  width: 18px;
+  height: 18px;
+  opacity: 1;
+}
+
+/* tinh chỉnh chữ nhỏ hơn ở nhóm SETTINGS để khớp bố cục dài */
+.section:last-child .label {
+  font-size: 17px;
+}
+
+/* Ẩn outline mặc định nhưng vẫn giữ accessibility */
+.navItem:focus-visible {
+  outline: 2px solid #111;
+  outline-offset: 2px;
+  background: var(--pill);
+}

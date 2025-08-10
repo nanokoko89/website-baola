@@ -1,0 +1,93 @@
+/* DurationSelect.module.scss */
+
+.container {
+  position: relative;
+  width: 240px; /* Bạn có thể thay đổi chiều rộng tuỳ ý */
+  font-family: "Roboto", sans-serif;
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #1f2d3d; /* Màu chữ hơi đậm, tạo cảm giác sang trọng */
+}
+
+.selectBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1.5px solid #d2d5dc; /* Màu xám nhạt khi đóng */
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out;
+
+  /* Khi hover nhẹ */
+  &:hover {
+    border-color: #a3a8b8;
+  }
+}
+
+/* Khi dropdown đang mở, đổi border sang tím */
+.selectBox.open {
+  border-color: #7c3aed; /* Tím nhạt */
+}
+
+.selectedValue {
+  font-size: 16px;
+  color: #1f2d3d;
+}
+
+.arrow {
+  font-size: 12px;
+  color: #1f2d3d;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Khi mở dropdown, xoay mũi tên xuống (khi đóng mũi tên hướng xuống, khi mở xoay lên) */
+.selectBox.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Danh sách options */
+.optionsList {
+  position: absolute;
+  top: calc(100% - 6px); /* Cách ô select 6px */
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d2d5dc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+
+  /* Khi scroll, không show scrollbar mặc định */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+.optionItem {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1f2d3d;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #f5f5f5; /* Nền xám nhạt khi hover */
+  }
+}
+
+/* Nếu bạn muốn đánh dấu item đã chọn, có thể thêm style như sau:
+.optionItem.selected {
+  font-weight: bold;
+  background-color: #eef1ff;
+}
+*/

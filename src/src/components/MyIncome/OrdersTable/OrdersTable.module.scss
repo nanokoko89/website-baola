@@ -1,0 +1,139 @@
+/* OrdersTable.module.scss */
+$bg-card: #ffffff;
+$border-radius: 0.75rem;
+$text-color: #1f1f47;
+$subtext-color: #6a6f9c;
+$primary-color: #5b57ff;
+$hover-bg: #f5f7ff;
+$border-dashed: #5b57ff;
+
+.tableContainer {
+  margin-top: 32px; /* Kéo xuống dưới đủ để khỏi đè RevenueChart và CashOutCard */
+  margin-left: 240px;
+  margin-right: 2rem;
+  background-color: $bg-card;
+  border-radius: $border-radius;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 768px) {
+  .tableContainer {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 1rem;
+}
+
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border: 1px dashed $border-dashed;
+  border-radius: 0.5rem;
+  color: $primary-color;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+
+  .plusIcon {
+    margin-right: 0.25rem;
+  }
+}
+
+.downloadBtn {
+  background-color: transparent;
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+}
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+thead {
+  border-bottom: 2px solid #f0f0f5;
+
+  th {
+    color: $text-color;
+    font-weight: 600;
+  }
+}
+
+tbody tr {
+  border-bottom: 1px solid #f0f0f5;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: $hover-bg;
+  }
+}
+
+.statusTag {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.statusPaid {
+  background-color: #33d69f;
+}
+
+.pagination {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: $subtext-color;
+  cursor: pointer;
+
+  .pageInfo {
+    margin-right: 1rem;
+  }
+}

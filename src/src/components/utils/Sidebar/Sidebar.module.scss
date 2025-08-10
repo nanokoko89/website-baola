@@ -1,0 +1,100 @@
+@use "../../../styles/variables" as *;
+
+$bg-sidebar: $color-bg-hover;
+$text-color: $color-text;
+
+$active-bg: #fff;
+$hover-bg: #fff;
+$sidebar-width: 240px;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
+  height: 100vh;
+  background-color: $bg-sidebar;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  padding-top: $spacing-4;
+
+  box-shadow: $box-shadow-sm;
+}
+
+.logo-container {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  font-size: $font-size-h3;
+  font-weight: $font-weight-semibold;
+  color: $text-color;
+  margin-bottom: $spacing-4;
+  padding-left: $spacing-4;
+}
+
+.logo {
+  height: 60px;
+}
+
+.logo-name {
+  margin-left: 8px;
+}
+
+.navList {
+  list-style: none;
+  flex: 1;
+  padding: $spacing-3;
+  margin: 0;
+}
+
+.profileList {
+  list-style: none;
+  padding: $spacing-3;
+  margin: 0;
+}
+
+.navItem {
+  width: 100%;
+  margin-bottom: $spacing-2;
+
+  span {
+    font-weight: 700;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: $spacing-2 $spacing-3;
+    color: $text-color;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 30px;
+    transition: background-color 0.2s;
+    // font-weight: 500;
+    border: 1px solid transparent;
+
+    &:hover {
+      border-color: $color-primary;
+      color: $color-primary;
+    }
+
+    /* Khi a có class "active" (NavLink isActive) */
+    &.active {
+      // background-color: $active-bg;
+      background-color: $hover-bg;
+
+      // font-weight: 600;
+    }
+  }
+
+  .icon {
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}

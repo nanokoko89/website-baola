@@ -1,0 +1,233 @@
+// src/components/MyProfile/MyProfile.module.scss
+
+@use "sass:color";
+
+// --- Biến SCSS (nếu cần) ---
+$primary-color: #5b57ff; // Màu xanh đậm cho tiêu đề
+$input-border: #cbd5e1; // Màu viền input
+$input-border-focus: #5b57ff; // Màu viền khi focus input
+$button-bg: #5b57ff; // Màu nền nút (xanh dương tươi)
+$button-text: #ffffff; // Màu chữ nút
+$button-disabled-bg: #cbd5e1; // Màu nền nút khi disabled
+$label-color: #5b57ff; // Màu chữ label
+
+// --- Bắt đầu style chính ---
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: calc(100vh - 200px);
+  padding-bottom: 100px;
+}
+
+.content {
+  flex: 1;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 16px;
+}
+
+// Nếu muốn cách trên (button) và dưới (password) một khoảng
+.mt24 {
+  margin-top: 24px;
+}
+
+// Lưới chia ô cho form
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+// Các nhóm formGroup chung
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $label-color;
+  margin-bottom: 8px;
+}
+
+.input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid $input-border;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+  outline: none;
+
+  &:focus {
+    border-color: $input-border-focus;
+  }
+}
+
+// RIêng phần số điện thoại: gom select + input vào chung 1 hàng
+.phoneGroup {
+  .phoneWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .countrySelect {
+    /* Chiều rộng cho select mã quốc gia */
+    width: 100px;
+    padding: 10px;
+    font-size: 0.95rem;
+    border: 1px solid $input-border;
+    border-radius: 6px;
+    background-color: #ffffff;
+    appearance: none;
+    cursor: pointer;
+    transition: border-color 0.2s;
+
+    &:focus {
+      border-color: $input-border-focus;
+    }
+  }
+
+  .inputField {
+    flex: 1;
+  }
+}
+
+// Nút Cập nhật (màu bị disabled trước; bạn có thể điều chỉnh khi form valid thì xóa class này)
+.button {
+  margin-top: 24px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $button-bg;
+  color: $button-text;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: color.adjust($button-bg, $lightness: -8%);
+  }
+}
+
+// Khi button disabled
+.buttonDisabled {
+  background-color: $button-disabled-bg !important;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.buttonDisabled {
+  border: 1px solid $button-disabled-bg !important;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.buttonLogout {
+  border: 1px solid red !important;
+  background-color: #fff;
+  color: #1e3a8a;
+
+  &:hover {
+    background-color: #e3e4e6;
+  }
+}
+
+// Phần mật khẩu: mỗi ô cần icon mắt nằm ở cuối
+.passwordGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.passwordGroup {
+  position: relative;
+
+  .passwordWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .eyeIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #6b7280; // xám nhẹ cho icon
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #374151;
+    }
+  }
+
+  input {
+    width: 100%;
+    padding-right: 36px; // chừa chỗ cho icon mắt
+  }
+}
+
+.avatarWrapper {
+  display: flex;
+  align-items: center;
+
+  .avatarPreview {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 16px;
+    border: 2px solid #dddddd;
+  }
+
+  .avatarPlaceholder {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999999;
+    font-size: 0.8rem;
+    margin-right: 16px;
+    border: 2px solid #dddddd;
+  }
+
+  .fileInput {
+    display: none;
+  }
+
+  .uploadLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background-color: #f1f5f9;
+    border: 1px dashed $input-border;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #4b5563;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e2e8f0;
+    }
+  }
+
+  .uploadIcon {
+    font-size: 1.2rem;
+    color: #6b7280;
+  }
+}

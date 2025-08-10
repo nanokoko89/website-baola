@@ -1,0 +1,97 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px; /* hình tròn */
+  box-sizing: border-box;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  user-select: none;
+  overflow: hidden;
+  background: #e9eef5;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.text {
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase; /* giống behavior thường dùng cho initial */
+}
+
+.fallback {
+  width: 55%;
+  height: 55%;
+  fill: rgba(255, 255, 255, 0.9);
+}
+
+/* Vòng story */
+.hasStory {
+  /* thêm khoảng cho vòng ngoài */
+  padding: 0;
+}
+.storyRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 3px solid transparent; /* width sẽ override inline */
+  /* default: rực rỡ */
+  background: linear-gradient(#fff, #fff) padding-box,
+    conic-gradient(#ff7a59, #ffcd3c, #4fd1c5, #6c5ce7, #ff7a59) border-box;
+  z-index: 1;
+  pointer-events: none;
+}
+.seen .storyRing {
+  background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(0deg, #e5e7eb, #cfd4dc) border-box;
+}
+
+/* Online dot */
+.online {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 28%;
+  height: 28%;
+  border-radius: 9999px;
+  background: #10b981; /* xanh online */
+  box-shadow: 0 0 0 2px #fff; /* viền trắng tách khỏi avatar */
+}
+
+/* Blocked overlay */
+.blocked {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: rgba(17, 24, 39, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: none;
+}
+.lock {
+  width: 44%;
+  height: 44%;
+  fill: #fff;
+  opacity: 0.9;
+}

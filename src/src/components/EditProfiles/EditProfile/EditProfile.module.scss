@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  margin-left: 240px;
+  margin-top: 60px;
+  width: calc(100vw - 240px);
+  padding: 2rem 0;
+}
+
+.left {
+  flex: 1;
+  padding-left: 40px;
+}
+
+.preview {
+  padding: 0 30px;
+  transform: translateY(20px);
+
+  height: auto;
+  width: 40%;
+  min-height: 720px;
+
+  /* ẩn scrollbar trên IE, Edge */
+  -ms-overflow-style: none;
+  /* ẩn scrollbar trên Firefox */
+  scrollbar-width: none;
+
+  /* ẩn scrollbar trên Chrome, Safari, Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.closeBtn {
+  display: none;
+}
+
+.right {
+  margin: 0 auto;
+  width: 360px;
+  height: 720px;
+  border: 5px solid black;
+  border-radius: 35px;
+  overflow: hidden;
+  transform: translateY(-20px);
+  overflow-y: auto;
+  background-color: var(--template-color-secondary);
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .left {
+    flex: 1;
+    padding: 0 20px 20px;
+    margin-bottom: 20px;
+  }
+
+  .preview {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .preview.open {
+    transform: translateX(0);
+  }
+  .closeBtn {
+    display: block;
+    margin-bottom: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+  }
+}

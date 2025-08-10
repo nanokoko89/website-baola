@@ -1,0 +1,271 @@
+/* src/components/Moderno/Moderno.module.scss */
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.profile-info {
+  margin-left: 16px;
+}
+
+.name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.username {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #333;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.social-icon:hover {
+  background-color: #f0f0f0;
+}
+
+/* Đường ngăn cách */
+.divider {
+  height: 1px;
+  background-color: #eee;
+  margin: 16px 0;
+}
+
+/* MAIN CARD */
+.main-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  padding: 16px 16px 0 16px;
+  margin-bottom: 20px;
+}
+
+.main-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px; /* Chiều cao đủ để hiển thị ảnh rõ */
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Badge giảm giá nằm chồng lên ảnh */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #7f6fe0; /* Màu tím nhạt */
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 50%;
+}
+
+/* Nội dung bên dưới ảnh */
+.main-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.main-subtitle {
+  margin: 8px 0 12px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Sao đánh giá */
+.stars {
+  display: flex;
+  gap: 4px;
+  color: #f0a500;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Giá gốc và giá khuyến mãi */
+.pricing {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.btn-primary {
+  background-color: #01685f;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.discounted-price {
+  color: #7f6fe0; /* Màu tím tương tự badge */
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* OTHER ITEMS */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  padding: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.item-image-wrapper {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-info {
+  margin-left: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.stars-small {
+  display: flex;
+  gap: 4px;
+  color: #f0a500;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: #7f6fe0;
+  margin-left: auto;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #7f6fe0;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #5e52c6;
+}
+
+.baola-text {
+  font-size: 14px;
+}

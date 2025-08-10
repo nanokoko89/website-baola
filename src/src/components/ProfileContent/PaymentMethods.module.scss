@@ -1,0 +1,175 @@
+// src/components/PaymentMethods/PaymentMethods.module.scss
+
+@use "sass:color";
+
+// --- Biến SCSS (có thể tùy chỉnh) ---
+$primary-color: #5b57ff; // Màu xanh đậm cho tiêu đề
+$input-border: #cbd5e1; // Màu viền input
+$input-border-focus: #5b57ff; // Màu viền khi focus input
+$button-bg: #5b57ff; // Màu nền nút (xanh dương tươi)
+$button-text: #ffffff; // Màu chữ nút
+$button-disabled-bg: #cbd5e1; // Màu nền nút khi disabled
+$label-color: #5b57ff; // Màu chữ label
+$description-color: #4b5563; // Màu chữ phần mô tả
+
+// --- Styles chung cho phần Payment ---
+.payment {
+}
+
+// Tiêu đề
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 8px;
+}
+
+// Phần mô tả ngắn
+.description {
+  font-size: 0.9375rem;
+  color: $description-color;
+  margin-bottom: 16px;
+}
+
+// Grid chung cho các input, nếu cần chia cột
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .formGrid {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-direction: column;
+  }
+}
+
+// Nhóm select phương thức (chỉ 1 cột)
+.methodGroup {
+  grid-column: 1 / -1; // chiếm trọn hàng
+  margin-bottom: 24px;
+}
+
+.label {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: $label-color;
+  margin-bottom: 8px;
+}
+
+.input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid $input-border;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+  outline: none;
+
+  &:focus {
+    border-color: $input-border-focus;
+  }
+}
+
+// Dành riêng cho select
+.select {
+  appearance: none;
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236B7280'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  background-color: #fff;
+  background-size: 10px 6px;
+  cursor: pointer;
+}
+
+// Style cho mỗi nhóm formGroup
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+// --- Styles cho phần Ngân hàng ---
+.bankSection {
+  margin-bottom: 24px;
+}
+
+// --- Styles cho phần Ví -->
+.walletSection {
+  margin-bottom: 24px;
+}
+
+// --- Styles cho phần QR ---
+.qrSection {
+  margin-bottom: 24px;
+
+  .qrUploadWrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .fileInput {
+    display: none;
+  }
+
+  .uploadLabel {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background-color: #f1f5f9;
+    border: 1px dashed $input-border;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: #4b5563;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e2e8f0;
+    }
+  }
+
+  .uploadIcon {
+    font-size: 1.2rem;
+    color: #6b7280;
+  }
+
+  .qrPreview {
+    margin-top: 16px;
+    text-align: center;
+
+    .qrImage {
+      max-width: 200px;
+      max-height: 200px;
+      border: 1px solid $input-border;
+      border-radius: 6px;
+    }
+  }
+}
+
+// Nút Lưu phương thức
+.button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: $button-bg;
+  color: $button-text;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: color.adjust($button-bg, $lightness: -8%);
+  }
+}
+
+.buttonDisabled {
+  background-color: $button-disabled-bg !important;
+  color: #ffffff;
+  cursor: not-allowed;
+}

@@ -1,0 +1,128 @@
+/* src/components/TwoColumnLayout.module.scss */
+
+/* --- Biến màu cơ bản --- */
+$primary-purple: #7c3aed;
+$light-purple-bg: #e9d5ff;
+$text-dark: #1e1e1e;
+$text-gray: #4b5563;
+$border-gray: #e5e7eb;
+$white: #ffffff;
+$shadow-sm: rgba(0, 0, 0, 0.05);
+
+/* Container bao ngoài */
+.wrapper {
+  display: flex;
+  gap: 24px;
+  // margin-left: 240px;
+  width: 100%;
+  margin-top: 60px;
+  // background-color: #f0f2f5ff;
+}
+
+/* ====== CỘT TRÁI: chứa Tabs + Content ====== */
+.leftColumn {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  /* Header chứa danh sách tab */
+  .tabsHeader {
+    display: flex;
+    gap: 8px;
+    background-color: $white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px $shadow-sm;
+  }
+
+  /* Mỗi tab: */
+  .tabItem {
+    // flex: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    color: $text-gray;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, font-weight 0.2s;
+
+    &:hover {
+      background-color: #f3f4f6;
+    }
+
+    &.active {
+      border: 2px solid $primary-purple;
+
+      color: $primary-purple;
+      // font-weight: 600;
+    }
+  }
+
+  /* Khung chứa nội dung của tab active */
+  .tabContent {
+    background-color: $white;
+    flex: 1; /* Chiếm hết chiều cao còn lại trong cột trái nếu có scroll */
+    overflow-y: auto; /* Nếu nội dung dài, sẽ cuộn được */
+  }
+}
+
+/* ====== CỘT PHẢI: chứa Preview (sticky) ====== */
+.rightColumn {
+  width: 440px; /* có thể điều chỉnh tuỳ ý */
+  position: relative;
+  padding: 0 30px;
+  flex: 0.4;
+
+  .closeBtn {
+    display: none;
+  }
+
+  .rightInner {
+    position: sticky;
+    top: 100px; /* Khoảng cách từ mép trên khi scroll */
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+  .leftColumn {
+    .tabsHeader {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+    .tabItem {
+      white-space: nowrap;
+    }
+  }
+  .rightColumn {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    padding: 20px;
+    padding-bottom: 80px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    .closeBtn {
+      display: block;
+      margin-bottom: 16px;
+      background: transparent;
+      border: none;
+      font-size: 24px;
+    }
+    &.open {
+      transform: translateX(0);
+    }
+  }
+}

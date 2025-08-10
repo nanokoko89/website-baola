@@ -1,0 +1,254 @@
+// src/components/DraggableList/DraggableList.module.scss
+
+// Variables
+$primary-blue: #3b82f6;
+$primary-pink: #ec4899;
+$primary-green: #10b981;
+$primary-purple: #8b5cf6;
+$text-dark: #1f2937;
+$text-gray: #6b7280;
+$border-gray: #e5e7eb;
+$shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-heavy: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.draggable-container {
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 12px;
+  // box-shadow: $shadow-light;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04),
+    0 4px 10px rgba(16, 24, 40, 0.06);
+
+  border: 2px solid transparent;
+  cursor: grab;
+  user-select: none;
+  @include transition-smooth;
+  width: 100%;
+
+  &:hover {
+    box-shadow: $shadow-medium;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  &.dragging {
+    opacity: 0.5;
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: $shadow-heavy;
+    z-index: 1000;
+  }
+
+  &.drag-over {
+    border-color: $primary-blue;
+    background: rgba(59, 130, 246, 0.05);
+    transform: translateY(-4px);
+    box-shadow: $shadow-heavy;
+  }
+}
+
+.drag-handle {
+  margin-right: 0.75rem;
+  color: $text-gray;
+  cursor: grab;
+  padding: 0.25rem;
+  border-radius: 4px;
+  @include transition-smooth;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: $text-dark;
+  }
+}
+
+.item-icon {
+  margin-right: 1rem;
+
+  .icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    @include flex-center;
+    font-size: 1.5rem;
+    @include transition-smooth;
+
+    &.pink-bg {
+      background: rgba(236, 72, 153, 0.1);
+    }
+    &.blue-bg {
+      background: rgba(59, 130, 246, 0.1);
+    }
+    &.green-bg {
+      background: rgba(16, 185, 129, 0.1);
+    }
+    &.purple-bg {
+      background: rgba(139, 92, 246, 0.1);
+    }
+  }
+}
+
+.item-content {
+  flex: 1;
+  min-width: 0;
+
+  .item-header {
+    display: flex;
+  }
+
+  .item-title {
+    font-size: 1rem;
+
+    font-weight: 600;
+    color: $text-dark;
+    margin: 0 8px 0.25rem 0;
+    line-height: 1.4;
+  }
+
+  .item-price {
+    font-size: 1rem;
+    color: $text-gray;
+    margin: 0;
+    font-weight: 500;
+  }
+}
+
+.item-actions {
+  margin-left: 1rem;
+
+  .action-btn {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    @include flex-center;
+    color: $text-gray;
+    font-size: 1.2rem;
+    @include transition-smooth;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+      color: $text-dark;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+}
+
+.instructions {
+  margin-top: 2rem;
+  text-align: center;
+  background-color: $primary-purple;
+
+  width: 100%;
+  height: 48px;
+  border-radius: 12px;
+  border: 0;
+  cursor: pointer;
+
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  color: white;
+  font-weight: 600;
+}
+
+.action-menu {
+  position: absolute;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  z-index: 1000;
+  width: 200px;
+}
+
+.action-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: $text-dark;
+  font-size: 0.95rem;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.action-menu-icon {
+  font-size: 1.1rem;
+}
+
+// Responsive
+@media (max-width: 640px) {
+  .draggable-container {
+    padding: 0.5rem;
+  }
+  .item-card {
+    padding: 0.75rem;
+  }
+  .drag-handle {
+    margin-right: 0.5rem;
+  }
+  .item-icon {
+    margin-right: 0.75rem;
+  }
+
+  .icon-wrapper {
+    width: 40px;
+    height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .item-title {
+    font-size: 1rem;
+  }
+  .item-price {
+    font-size: 0.9rem;
+  }
+}
+
+// Animation cho khi thả item
+@keyframes dropSuccess {
+  0% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

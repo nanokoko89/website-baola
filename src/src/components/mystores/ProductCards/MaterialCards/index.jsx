@@ -1,0 +1,98 @@
+import React from "react";
+import classNames from "classnames/bind";
+import styles from "./MaterialCards.module.scss";
+import CalendarPreview from "../../../coachingCallComponents/Calendars/CalendarPreview";
+import { FaArrowRight } from "react-icons/fa";
+import numberWithCommas from "../../../../config/numberWithCommas";
+
+const cx = classNames.bind(styles);
+
+export const ButtonCard = ({ item, onClick }) => (
+  <div className={cx("button")} onClick={onClick}>
+    <img
+      className={cx("thumbnail")}
+      src={item.template.imageUrl}
+      alt={item.template.addText.title}
+    />
+
+    <div className={cx("content")}>
+      <h3 className={cx("title")}>{item.template.addText.title}</h3>
+
+      {item.checkout.price > 0 && (
+        <div className={cx("price")}>
+          {numberWithCommas(item.checkout.price)}đ
+        </div>
+      )}
+    </div>
+  </div>
+);
+
+export const CalloutCard = ({ item, onClick }) => (
+  <div className={cx("callout")} onClick={onClick}>
+    <img
+      className={cx("thumbnail")}
+      src={item.template.imageUrl}
+      alt={item.template.addText.title}
+    />
+    <div className={cx("content")}>
+      <div className={cx("top")}>
+        <h3 className={cx("title")}>{item.template.addText.title}</h3>
+        {item.template.addText.description && (
+          <p className={cx("desc")}>{item.template.addText.description}</p>
+        )}
+        {item.checkout.price > 0 && (
+          <div className={cx("price")}>
+            {numberWithCommas(item.checkout.price)}đ
+          </div>
+        )}
+      </div>
+      {item.template.addText.buttonText && (
+        <button className={cx("btn")}>
+          {item.template.addText.buttonText} <FaArrowRight />
+        </button>
+      )}
+    </div>
+  </div>
+);
+
+export const PreviewCard = ({ item, onClick }) => (
+  <div className={cx("preview")} onClick={onClick}>
+    <div className={cx("top")}>
+      <img
+        className={cx("thumbnail")}
+        src={item.template.imageUrl}
+        alt={item.template.addText.title}
+      />
+      <div className={cx("content")}>
+        <h3 className={cx("title")}>{item.template.addText.title}</h3>
+        {item.template.addText.description && (
+          <p className={cx("desc")}>{item.template.addText.description}</p>
+        )}
+        {item.checkout.price > 0 && (
+          <div className={cx("price")}>
+            {numberWithCommas(item.checkout.price)}đ
+          </div>
+        )}
+      </div>
+    </div>
+    <div className={cx("content")}>
+      {item.type === "CoachingCall" && (
+        <CalendarPreview headerOnly={item.calendarHeaderOnly} />
+      )}
+
+      {item.type === "OnlineCourse" && (
+        <ul className={cx("preview")}>
+          <li>Chương 1: Giới thiệu</li>
+          <li>Chương 2: Giới thiệu</li>
+          <li>Chương 3: Giới thiệu</li>
+        </ul>
+      )}
+
+      {item.template.addText.buttonText && (
+        <button className={cx("btn")} onClick={() => console.log(item)}>
+          {item.template.addText.buttonText} <FaArrowRight />
+        </button>
+      )}
+    </div>
+  </div>
+);

@@ -1,0 +1,360 @@
+/* ProductPage.module.scss */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+// Common styles
+.pageTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0 0 20px 0;
+}
+
+.section {
+  padding: 24px 0;
+  border-bottom: 1px solid #eaeaea;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.sectionHeader {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #333;
+}
+
+.sectionDescription {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.formGroup {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.input,
+.textarea,
+.select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #333;
+
+  &:focus {
+    outline: none;
+    border-color: #0070f3;
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.1);
+  }
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+// Select component
+.selectGroup {
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.select {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+// Create Product specific styles
+.createProduct {
+  .labelWithFormat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .formatHint {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .mediaUpload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    border: 1px dashed #ddd;
+    border-radius: 6px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #666;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .mediaTitle {
+    font-size: 14px;
+    font-weight: 500;
+    margin: 12px 0 4px 0;
+  }
+
+  .mediaDescription {
+    font-size: 12px;
+    margin: 0;
+    max-width: 250px;
+    line-height: 1.4;
+  }
+}
+
+// Checkout Fields specific styles
+.checkoutFields {
+  .manageLink {
+    color: #0070f3;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: inline-block;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.fieldItem {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.fieldIcon {
+  color: #333;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.fieldName {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+.fieldControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.requiredText {
+  font-size: 14px;
+  color: #666;
+  margin-right: 4px;
+}
+
+.toggleWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &.active {
+    background-color: #0070f3;
+  }
+
+  .toggleSlider {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: left 0.2s;
+  }
+
+  &.active .toggleSlider {
+    left: 22px;
+  }
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.metadataSection {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.addButton {
+  background-color: #f5f5f5;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
+}
+
+.benefitsSection {
+  margin-top: 30px;
+}
+
+.benefitItem {
+  margin-bottom: 10px;
+}
+
+.benefitHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.expanded {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+}
+
+.benefitTitleRow {
+  display: flex;
+  align-items: center;
+}
+
+.benefitCheck,
+.benefitIcon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.benefitTitle {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.benefitCount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.benefitContent {
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-top: none;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  padding: 20px;
+}
+
+.noBenefitText {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px 0;
+}
+
+.createNewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f5f5f5;
+  border: none;
+  color: #333;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eaeaea;
+  }
+}

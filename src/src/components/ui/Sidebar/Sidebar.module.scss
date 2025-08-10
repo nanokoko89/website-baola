@@ -1,0 +1,183 @@
+/* ====== Tuỳ biến nhanh ====== */
+$sidebar-width: 320px; // đúng theo ảnh
+$bg: #eef0ff; // nền tím rất nhạt
+$navy: #0a1e64; // màu chữ/icon xanh đậm
+$navy-80: rgba(10, 30, 100, 0.8);
+
+$menu-font: 16px; // cỡ chữ item
+$menu-height: 48px; // chiều cao item
+$menu-radius: 28px; // bo góc viên thuốc
+$icon-size: 28px; // kích thước icon trong item
+
+.wrap {
+  width: $sidebar-width;
+  height: 100vh;
+  background: $bg;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden; // đúng layout ảnh
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5560ff 0%, #6f69ff 100%);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 18px rgba(85, 96, 255, 0.28);
+}
+
+.logoDollar {
+  font-weight: 800;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  transform: translateY(-1px);
+  letter-spacing: -0.5px;
+}
+
+.brandText {
+  font-weight: 800;
+  font-size: 32px;
+  color: $navy;
+  letter-spacing: 0.2px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0 10px;
+}
+
+.navItem {
+  height: $menu-height;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 22px;
+  border: 0;
+  background: transparent;
+  color: $navy;
+  font-weight: 700;
+  font-size: $menu-font;
+  border-radius: $menu-radius;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+
+  &:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.active {
+  background: #fff;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  color: $navy;
+}
+
+.label {
+  transform: translateY(1px);
+  letter-spacing: 0.2px;
+}
+
+.bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.askStanley {
+  height: 54px;
+  border: 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: transparent;
+  border-radius: 16px;
+  padding: 0 6px;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.askIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: radial-gradient(
+    120% 120% at 20% 20%,
+    #7a3cff 0%,
+    #581bff 60%,
+    #4a12f4 100%
+  );
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  /* chấm trắng + mặt cười tối giản */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: #fff;
+    box-shadow:
+      -8px 0 0 0 #fff,
+      /* mắt trái */ 8px 0 0 0 #fff; /* mắt phải */
+  }
+}
+
+.askText {
+  color: $navy;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+}
+
+.settings {
+  @extend .navItem;
+  height: 56px;
+  padding-left: 10px;
+}
+
+.me {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 4px 6px;
+}
+
+.meAvatar :global(img) {
+  border-radius: 14px;
+}
+
+.meName {
+  color: $navy-80;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}

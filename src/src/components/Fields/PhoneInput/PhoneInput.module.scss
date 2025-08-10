@@ -1,0 +1,22 @@
+/* src/components/PhoneInput/PhoneInput.module.scss */
+.wrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 16px;
+}
+.zip {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+}
+.input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  &::placeholder {
+    color: #9aa5b1;
+  }
+}

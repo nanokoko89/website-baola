@@ -1,0 +1,354 @@
+.wrapper {
+  height: auto;
+  min-height: 720px;
+
+  width: 100%;
+  background-color: var(--template-color-secondary);
+}
+.container {
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: var(--template-font-family, "Roboto", sans-serif);
+  color: var(--template-text-color);
+  background-color: var(--template-color-secondary);
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.avatar-wrapper {
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+}
+
+.profile-info {
+  margin-left: 16px;
+}
+
+.name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.username {
+  margin: 4px 0 10px;
+  font-size: 16px;
+  display: block;
+}
+
+.social-icons {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.social-icon-container {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.social-icon-container:hover {
+  background-color: #f0f0f0;
+}
+
+.social-icon {
+  color: var(--template-text-color);
+  font-size: 20px;
+}
+
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+.course-card {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 24px;
+  padding: 16px;
+
+  .course-card-top {
+    display: flex;
+  }
+
+  /* Ảnh khóa học bên trái */
+  .course-image-wrapper {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .course-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .course-card-bottom {
+    width: 100%;
+    margin-top: 12px;
+
+    .btn-primary {
+      background-color: var(--template-color-primary);
+      color: var(--template-button-text-color);
+      border: none;
+      font-size: 16px;
+      padding: 16px;
+      border-radius: 50px;
+      font-weight: 600;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  /* Thông tin khóa học bên phải */
+  .course-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding-left: 16px;
+
+    .course-title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .course-desc {
+      font-size: 16px;
+      line-height: 1.4;
+      opacity: 0.85;
+      margin-bottom: 8px;
+    }
+
+    .course-pricing {
+      display: flex;
+      // align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      flex-direction: column;
+
+      .price {
+        font-size: 1rem; /* ~16px */
+        font-weight: 700;
+        color: var(--template-color-primary);
+      }
+
+      .original-price {
+        font-size: 0.875rem; /* ~14px */
+        color: #ffffff80;
+        text-decoration: line-through;
+      }
+
+      .discount-badge {
+        background-color: var(--template-color-primary);
+        color: #ffffff;
+        font-size: 0.75rem; /* ~12px */
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-weight: 500;
+      }
+
+      .rating {
+        font-size: 0.85rem; /* ~13px */
+        color: #ffb400;
+        margin-left: auto;
+      }
+    }
+
+    .items-left {
+      font-size: 0.75rem; /* ~12px */
+      opacity: 0.75;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+/* Badge giảm giá nằm chồng lên ảnh */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--template-color-primary); /* Màu tím nhạt */
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 50%;
+}
+
+/* Nội dung bên dưới ảnh */
+.main-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.main-subtitle {
+  margin: 8px 0 12px;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Sao đánh giá */
+.stars {
+  display: flex;
+  gap: 4px;
+  color: #f0a500;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+/* Giá gốc và giá khuyến mãi */
+.pricing {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.discounted-price {
+  color: var(--template-color-primary); /* Màu tím tương tự badge */
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* OTHER ITEMS */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.item-card {
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 20px;
+  padding: 16px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.item-image-wrapper {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-info {
+  margin-left: 12px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.stars-small {
+  display: flex;
+  gap: 4px;
+  color: #f0a500;
+  margin: 4px 0 0;
+  font-size: 12px;
+}
+
+.item-price {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--template-color-primary);
+  margin-left: auto;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  font-size: 14px;
+  color: #666;
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--template-color-primary);
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #5e52c6;
+}
+
+.baola-text {
+  font-size: 14px;
+}

@@ -1,0 +1,81 @@
+/* Banner.module.scss */
+
+@use "sass:color";
+$bg-banner: #eef2ff;
+$text-color: #1f1f47;
+$border-radius: 0.75rem;
+$primary-color: #5b57ff;
+$close-color: #999;
+
+.bannerContainer {
+  margin-top: 80px; /* Bằng height header (64px) + 1rem */
+  margin-left: 240px;
+  margin-right: 2rem;
+  background-color: $bg-banner;
+  border-radius: $border-radius;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .bannerContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.bannerText {
+  display: flex;
+  align-items: center;
+
+  .icon {
+    margin-right: 0.75rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .message {
+    font-size: 0.95rem;
+    color: $text-color;
+    font-weight: 500;
+  }
+  .highlight {
+    font-weight: 600;
+    margin-left: 0.25rem;
+  }
+}
+
+.btnConnect {
+  background-color: transparent;
+  border: 1px solid $primary-color;
+  color: $primary-color;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+
+.btnClose {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: $close-color;
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  &:hover {
+    color: color.adjust($close-color, $lightness: -10%);
+  }
+}

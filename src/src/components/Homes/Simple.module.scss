@@ -1,0 +1,152 @@
+/* src/components/Features/Features.module.scss */
+
+/* Wrapper chung cho toàn bộ phần */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+/* Mỗi section sẽ nằm ngang, chiều ngang flex */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 80px;
+
+  /* Ở màn hình nhỏ hơn, đổi thành flex-col */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+}
+
+/* === Phần 1: sectionTop === */
+.sectionTop {
+  /* Image bên trái, text bên phải */
+  .imageWrapper {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+      flex: 0 0 auto;
+    }
+  }
+
+  .textWrapper {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+
+    @media (max-width: 768px) {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+}
+
+/* === Phần 2: sectionBottom === */
+.sectionBottom {
+  /* Ở desktop: text bên trái, image bên phải */
+  .textWrapperBottom {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 40px;
+
+    @media (max-width: 768px) {
+      padding-right: 0;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+
+  .imageWrapperBottom {
+    flex: 0 0 50%;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      flex: 0 0 auto;
+    }
+  }
+}
+
+/* Tiêu đề chung cho cả hai */
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f215a;
+  margin: 0;
+}
+
+/* Mô tả chung */
+.description {
+  font-size: 16px;
+  color: #4b4b7a;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* === Ảnh phía trên: mockup composite === */
+.mockupTop {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+}
+
+.mockupBottom {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* === Ảnh phía dưới: 2 chiếc điện thoại và mũi tên === */
+.phonesContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Ảnh điện thoại */
+.phone {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Mũi tên giữa 2 điện thoại */
+.arrow {
+  font-size: 36px;
+  color: #d1d1e8;
+  margin: 0 16px;
+  /* Đảm bảo ở giữa hai ảnh */
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Để responsive: thu nhỏ điện thoại và mũi tên */
+@media (max-width: 768px) {
+  .phone {
+    width: 160px;
+  }
+  .arrow {
+    font-size: 28px;
+    margin: 0 12px;
+  }
+}

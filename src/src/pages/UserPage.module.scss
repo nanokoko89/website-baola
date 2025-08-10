@@ -1,0 +1,26 @@
+@use "../styles/variables" as *;
+
+/* Container chính */
+.container {
+  display: flex;
+  margin: 0 auto;
+  gap: 2rem;
+  width: 100vw;
+  min-height: 100dvh;
+  font-family: var(--template-font-family, sans-serif);
+  background-color: var(--template-color-secondary, #fff);
+  color: var(--template-text-color, #000);
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+}
+
+.not-found {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #d93025;
+}

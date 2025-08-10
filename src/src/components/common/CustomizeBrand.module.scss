@@ -1,0 +1,129 @@
+/* src/components/CustomizeBrand/CustomizeBrand.module.scss */
+
+/* Biến SCSS chung */
+$card-bg: #ffffff;
+$card-radius: 12px;
+$shadow-color: rgba(0, 0, 0, 0.1);
+$shadow-offset: 0px 4px;
+$shadow-radius: 6px;
+
+/* Container chính chứa 2 card */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Mỗi card */
+.card {
+  flex: 1 1 45%;
+  background-color: $card-bg;
+  border-radius: $card-radius;
+  box-shadow: $shadow-offset $shadow-offset $shadow-radius $shadow-color;
+  padding: 16px;
+  transition: transform 0.2s ease;
+
+  @media (max-width: 768px) {
+    flex: 1 1 100%;
+  }
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+/* Container hiển thị ô tròn lớn + ô input text + input color (ẩn) */
+.selectedContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.selected {
+  background-color: #f9f9ff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+}
+
+/* Dùng để bọc ô circleLarge, cho nhấn lên toàn bộ vùng này kích hoạt <input type="color"> */
+.circleLabel {
+  display: inline-flex; /* Cho phép bọc circleLarge */
+  cursor: pointer;
+}
+
+/* Ô tròn lớn */
+.circleLarge {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #dddddd;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+    border-color: #999999;
+  }
+}
+
+/* Ô input để gõ mã hex */
+.colorInput {
+  font-size: 14px;
+  padding: 6px 8px;
+  width: 100px;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+  outline: none;
+  margin-left: 12px;
+  flex: 1;
+  background-color: #f4f4fb;
+
+  &:focus {
+    border-color: #7769ff; /* Khi focus, viền tím nhạt */
+  }
+}
+
+/* Input color ẩn nhưng vẫn tồn tại trong DOM để label có thể trigger */
+.colorPickerHidden {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute; /* Đặt ra khỏi flow, không ảnh hưởng layout */
+  pointer-events: none; /* Đảm bảo user click không chạm vào input trực tiếp */
+}
+
+/* Hàng các ô tròn nhỏ */
+.colorRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Ô tròn nhỏ (preset color) */
+.circleSmall {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #dad8d8;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.1s ease;
+  background-color: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Khi ô tròn nhỏ được chọn */
+.circleSmallActive {
+  border-color: #333333;
+  border-width: 2px;
+}

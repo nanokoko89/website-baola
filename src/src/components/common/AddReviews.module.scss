@@ -1,0 +1,237 @@
+// AddReviews.module.scss
+
+$primary-color: #5a4fcf;
+$border-color: #e8eaf6;
+$star-color: #f5c518;
+$bg-card: #ffffff;
+$text-color: #333333;
+$circle-bg: #e8eaf6;
+
+.add-reviews {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background: $bg-card;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; // đảm bảo có khoảng cách giữa mỗi review-card
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $border-color;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.smiley-icon {
+  font-size: 20px;
+  color: $primary-color;
+}
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: $text-color;
+}
+.collapse-icon {
+  font-size: 20px;
+  color: $text-color;
+  cursor: pointer;
+}
+
+.review-card {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background: $bg-card;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drag-icon {
+  font-size: 20px;
+  color: #9e9e9e;
+  cursor: grab;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.star {
+  font-size: 20px;
+  color: $star-color;
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid $primary-color;
+  background: transparent;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+}
+
+.delete-icon {
+  font-size: 16px;
+}
+
+.card-body {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+}
+
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: $circle-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-icon {
+  font-size: 36px;
+  color: $bg-card;
+}
+
+.inputs-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-name {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: $text-color;
+  outline: none;
+  transition: border 0.2s ease;
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+.input-text {
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: $text-color;
+  min-height: 80px;
+  resize: vertical;
+  outline: none;
+  transition: border 0.2s ease;
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+.choose-image-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid $primary-color;
+  background: transparent;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $primary-color;
+  width: fit-content;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+}
+
+.upload-icon {
+  font-size: 16px;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid $primary-color;
+  background: transparent;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: $primary-color;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s ease;
+  &:hover {
+    background: rgba($primary-color, 0.1);
+  }
+}
+
+.plus-icon {
+  font-size: 18px;
+}
+
+.image-picker-wrapper {
+  margin-top: 8px;
+}
+
+/* Nếu muốn style nút bên trong ImagePicker cho đồng bộ với .choose-image-button,
+   bạn có thể thêm override cụ thể: */
+.image-picker-wrapper :global(.pickerButton) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid $primary-color;
+  background: transparent;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: $primary-color;
+  width: fit-content;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.image-picker-wrapper :global(.pickerButton:hover) {
+  background: rgba($primary-color, 0.1);
+}

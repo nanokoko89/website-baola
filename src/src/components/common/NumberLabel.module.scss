@@ -1,0 +1,32 @@
+/* PickStyle.module.scss */
+$primary-color: #1e2a5c;
+$bg-selected: #f0f3fa;
+$border-color: #e2e8f0;
+$badge-bg: #5458f7;
+$badge-color: #fff;
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $bg-selected;
+    color: $primary-color;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+}

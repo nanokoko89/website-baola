@@ -1,0 +1,48 @@
+/* src/components/RadioGroup/RadioGroup.module.scss */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: #2e3a59;
+  font-weight: 500;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #fff;
+
+  input {
+    display: none;
+  }
+  .circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1f5a4d;
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+  }
+  input:checked + .circle::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: #1f5a4d;
+    border-radius: 50%;
+  }
+  .label {
+    font-size: 16px;
+    color: var(--template-text-color);
+  }
+}

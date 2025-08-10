@@ -1,0 +1,134 @@
+/* src/components/Subscribe/Subscribe.module.scss */
+
+$primary-purple: #5f4bff; // màu background chính
+$button-bg: #1c1f4a; // màu nền nút
+$button-hover: #16193e; // màu hover cho nút
+$input-border: #ffffff; // màu viền input
+$text-white: #ffffff; // màu chữ trắng
+$text-light: #e0e0e0; // màu chữ phụ
+
+.subscribe-wrapper {
+  width: 100%;
+  background-color: $primary-purple;
+  max-width: 1200px;
+  border-radius: 16px;
+  padding: 48px 24px;
+
+  margin: 0 auto;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  /* Nếu muốn giới hạn chiều ngang, dùng margin auto */
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: $text-white;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: $text-light;
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  height: 56px;
+  border-radius: 56px; // bo tròn hoàn toàn
+  overflow: hidden;
+  background-color: $text-white;
+
+  /* Trên mobile có thể bung thành dạng cột, nhưng theo ảnh hình như luôn hàng ngang */
+}
+
+.email-input {
+  flex: 1;
+  border: none;
+  padding: 0 20px;
+  font-size: 1rem;
+  color: #333333;
+  outline: none;
+
+  /* Chỉ để placeholder màu sáng */
+  &::placeholder {
+    color: #999999;
+  }
+}
+
+.submit-button {
+  background-color: $button-bg;
+  color: $text-white;
+  border: none;
+  padding: 0 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $button-hover;
+  }
+}
+
+.disclaimer {
+  font-size: 0.875rem;
+  color: $text-light;
+  margin-top: 24px;
+  line-height: 1.4;
+  max-width: 500px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .subscribe-wrapper {
+    padding: 32px 16px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 24px;
+  }
+
+  .form {
+    height: 48px;
+  }
+
+  .email-input {
+    padding: 0 16px;
+    font-size: 0.9375rem;
+  }
+
+  .submit-button {
+    padding: 0 24px;
+    font-size: 0.9375rem;
+  }
+
+  .disclaimer {
+    font-size: 0.8125rem;
+    margin-top: 20px;
+  }
+}

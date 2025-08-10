@@ -1,0 +1,87 @@
+/* PasteURL.module.scss */
+
+$primary-color: #1e2a5c;
+$border-color: #e2e8f0;
+$bg-input: #ffffff;
+$input-focus-bg: #f5f7fb;
+$text-placeholder: #a0aec0;
+$text-count: #718096;
+$font-family: "Roboto", sans-serif;
+
+.pasteURL-container {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  color: $primary-color;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f0f3fa;
+    color: $primary-color;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: $bg-input;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 10px 12px;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  &:focus-within {
+    background-color: $input-focus-bg;
+    border-color: $primary-color;
+  }
+
+  .icon-link {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    fill: $text-placeholder;
+  }
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: $primary-color;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+  }
+}
+
+.char-counter {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+  color: $text-count;
+}

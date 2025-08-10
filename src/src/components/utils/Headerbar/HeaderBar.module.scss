@@ -1,0 +1,125 @@
+@use "../../../styles/variables" as *;
+
+.headerBar {
+  position: fixed;
+  top: 0;
+  left: 240px; /* Bằng width của sidebar */
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.backIcon {
+  cursor: pointer;
+  margin-right: 0.75rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.separator {
+  margin: 0 0.5rem;
+  color: #6b7280;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.previewBtn {
+  margin-right: 0.5rem;
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  border: 1px solid #d1d5db;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.link {
+  font-size: 0.875rem;
+  color: #4f46e5;
+  text-decoration: none;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.linkIcon {
+  display: none;
+  margin-right: 16px;
+  font-size: 20px;
+}
+
+.linkText {
+  display: inline;
+}
+
+.copyIcon {
+  cursor: pointer;
+}
+
+.mobileBrand {
+  display: flex;
+  align-items: center;
+}
+
+.mobileLogo {
+  display: none;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+}
+
+.mobileName {
+  display: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+@media (max-width: 768px) {
+  .headerBar {
+    left: 0;
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .title {
+    display: none;
+  }
+  .mobileLogo,
+  .mobileName {
+    display: block;
+  }
+  .linkText {
+    display: none;
+  }
+  .linkIcon {
+    display: block;
+  }
+
+  .previewBtn {
+    display: flex;
+    align-items: center;
+    background-color: $color-primary;
+    color: #fff;
+    margin-right: 16px;
+    padding: 8px;
+  }
+}

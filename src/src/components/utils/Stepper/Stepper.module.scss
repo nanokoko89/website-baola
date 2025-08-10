@@ -1,0 +1,62 @@
+/* src/components/Stepper/Stepper.module.scss */
+.stepper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Thẻ chứa mỗi step (circle + label) */
+.stepper__item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Vòng tròn chứa số hoặc dấu ✓ */
+.stepper__circle {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #5b47fa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #5b47fa;
+  background-color: white;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* Nhãn dưới vòng tròn */
+.stepper__label {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Khi step active */
+.stepper__item.active .stepper__circle {
+  background-color: #5b47fa;
+  color: white;
+}
+
+/* Khi step đã hoàn thành */
+.stepper__item.completed .stepper__circle {
+  background-color: #5b47fa;
+  color: white;
+}
+
+/* Thanh nối giữa các step */
+.stepper__bar {
+  flex: 1 1 auto;
+  height: 2px;
+  background-color: #e0e0e0;
+  margin: 0 12px;
+  position: relative;
+}
+
+/* Khi đã hoàn thành (highlight) */
+.stepper__bar.filled {
+  background-color: #5b47fa;
+}

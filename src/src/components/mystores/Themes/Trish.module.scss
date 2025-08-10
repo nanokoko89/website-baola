@@ -1,0 +1,160 @@
+/* Màu nền hồng nhạt và bo góc */
+.trish-wrapper {
+  background-color: #ffe4ec; /* light pink */
+  padding: 40px 16px;
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  color: #000;
+}
+
+/* Ảnh đại diện dạng hình tròn, canh giữa */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Tên Trish, canh giữa, font to và đậm */
+.name {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+/* Social icons: hiển thị ngang, cách đều, canh giữa */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+
+  a {
+    color: #000; /* Icon màu đen */
+    font-size: 24px; /* Kích thước icon */
+    transition: color 0.2s;
+
+    &:hover {
+      color: #ec3075; /* khi hover chuyển màu hồng đậm */
+    }
+  }
+}
+
+/* Các section (Courses, Digital Starter Kit) */
+.section {
+  margin-top: 24px;
+}
+
+/* Tiêu đề section có gạch chân nằm giữa */
+.section-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 4px;
+  position: relative;
+  margin-bottom: 12px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: #000;
+  }
+}
+
+/* Card của khóa học */
+.course-card {
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 8px;
+}
+
+/* Bên trong course-card: ảnh + thông tin */
+.course-content {
+  display: flex;
+  gap: 12px;
+}
+
+/* Ảnh khóa học */
+.course-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Thông tin tiêu đề + mô tả */
+.course-info {
+  flex: 1;
+}
+
+.course-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Nút Get Started */
+.course-button {
+  margin-top: 16px;
+  width: 100%;
+  background-color: #ec3075; /* hồng đậm */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #d02368; /* hồng đậm hơn khi hover */
+  }
+}
+
+/* Section Digital Starter Kit: chứa các kit-item */
+.starter-kit {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* MỗiKit-item là 1 ảnh */
+.kit-item {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

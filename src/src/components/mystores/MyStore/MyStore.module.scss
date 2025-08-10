@@ -1,0 +1,132 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 240px;
+  width: calc(100vw - 240px);
+  margin-top: 80px;
+  background-color: #fbfbfe;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab-header {
+  display: flex;
+  gap: 12px;
+  padding: 24px 24px 0 24px;
+  //   background: #f8f9fa;
+
+  .tab-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: transparent;
+    border: 1px solid #e9ecef;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background: #e9ecef;
+      color: #495057;
+      border-color: #dee2e6;
+    }
+
+    &.active {
+      color: #fff;
+      background: #6366f1;
+      border-color: #6366f1;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+
+      .tab-icon {
+        color: #fff;
+      }
+    }
+
+    &:focus {
+      outline: 2px solid #6366f1;
+      outline-offset: 2px;
+    }
+  }
+
+  .tab-icon {
+    width: 16px;
+    height: 16px;
+    color: inherit;
+    transition: color 0.3s ease;
+  }
+}
+
+.tabsContent {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.preview {
+  padding: 0 30px;
+  transform: translateY(-20px);
+}
+
+.closeBtn {
+  display: none;
+}
+
+.previewFrame {
+  width: 360px;
+  height: 720px;
+  margin: 0 auto;
+  border: 5px solid black;
+  border-radius: 35px;
+  overflow: hidden;
+  transform: translateY(-20px);
+  overflow-y: auto;
+
+  /* ẩn scrollbar trên IE, Edge */
+  -ms-overflow-style: none;
+  /* ẩn scrollbar trên Firefox */
+  scrollbar-width: none;
+
+  /* ẩn scrollbar trên Chrome, Safari, Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin-left: 0;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+  .preview {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 80px;
+    background: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  .preview.open {
+    transform: translateX(0);
+  }
+  .closeBtn {
+    display: block;
+    margin-bottom: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+  }
+}

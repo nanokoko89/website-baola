@@ -1,0 +1,295 @@
+.container {
+  height: auto;
+  width: 100%;
+  min-height: 720px;
+
+  // background-image: url("https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg");
+  /* URL ảnh minh họa (Alexandra Silva). Bạn thay bằng URL hoặc import file local nếu cần. */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  // background-color: #7d1bf5;
+}
+
+.spotlight-wrapper {
+  position: relative;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+  color: var(--template-text-color);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Lớp phủ mờ (đặt trên background nhưng dưới content) */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Màu đen mờ */
+  z-index: 1;
+  min-height: 720px;
+}
+
+/* Khung chứa toàn bộ nội dung, nằm trên overlay */
+.content-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  // margin: 0 20px; /* Cách lề trái phải một chút */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ----------------------
+   HEADER: Tên + Social
+   ---------------------- */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+
+  .name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .bio {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+
+    .icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s, transform 0.2s;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.35);
+        transform: scale(1.1);
+      }
+
+      .icon {
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+/* Nếu cần hiển thị avatar dưới dạng wrapper (ở đây mình chỉ để placeholder) */
+.avatar-image-wrapper {
+  width: 0; /* Do background đã hiển thị avatar, nên giữ 0 nếu không dùng */
+  height: 0;
+}
+
+.item-list {
+  flex: 1;
+  width: 100%;
+}
+
+/* ----------------------------
+   BOOKING CARD
+   ---------------------------- */
+.booking-card {
+  width: 100%;
+  background-color: var(--template-color-secondary);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+
+  .booking-card-top {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Phần Logo Google Calendar */
+  .calendar-logo-wrapper {
+    flex: 0 0 80px; /* Chiều ngang cố định 80px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f7f3ed; /* Màu be nhạt */
+    // padding: 20px;
+    border-radius: 12px;
+    margin-left: 16px;
+    overflow: hidden;
+
+    .calendar-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  /* Phần thông tin đặt lịch */
+  .booking-info {
+    flex: 1;
+    padding: 16px 16px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    .booking-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--template-text-color);
+      margin: 0;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .booking-subtitle {
+      font-size: 14px;
+      color: var(--template-text-color);
+      line-height: 1.3;
+      margin: 0;
+      margin-bottom: 8px;
+    }
+
+    /* Dòng giá và đánh giá */
+    .price-rating {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .current-price {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--template-color-primary);
+      }
+
+      .original-price {
+        font-size: 16px;
+        color: #888888;
+        text-decoration: line-through;
+      }
+
+      .rating {
+        background-color: #ffe066; /* màu vàng nhạt cho sao */
+        color: #000000;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+
+      .discount-tag {
+        background-color: #ffcccc; /* hồng nhạt */
+        color: #b30000;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 6px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  /* Nút "Đặt Lịch" */
+  .booking-button {
+    margin-top: auto; /* luôn dồn nút xuống cuối */
+    // background: linear-gradient(135deg, #6b00e1, #8a2be2);
+    background: var(--template-color-primary);
+    color: var(--template-button-text-color);
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+    margin: 16px;
+
+    &:hover {
+      background: linear-gradient(135deg, #7d1bf5, #9a44ff);
+      transform: translateY(-2px);
+    }
+
+    .arrow-icon {
+      margin-left: 8px;
+      font-size: 18px;
+    }
+  }
+}
+
+/* ----------------------------
+   OTHER LINKS: Podcast & YouTube
+   ---------------------------- */
+.other-links {
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    background-color: #f7f3ed; /* Màu be nhạt giống booking-card */
+    border-radius: 12px;
+    padding: 12px 16px;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:hover {
+      background-color: #ece7d3;
+      transform: translateY(-2px);
+    }
+
+    .link-icon-wrapper {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+
+      .link-icon {
+        font-size: 20px;
+        color: var(
+          --template-color-primary
+        ); /* Màu xanh Spotify làm ví dụ, nếu là YouTube có thể đổi màu */
+      }
+    }
+
+    .link-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #000000;
+    }
+  }
+}
+
+/* Nếu bạn muốn tách màu icon YouTube khác, có thể override class cụ thể */
+.other-links .link-card:nth-child(2) .link-icon {
+  color: #ff0000; /* Màu đỏ YouTube cho link thứ 2 */
+}

@@ -1,0 +1,356 @@
+/* SelectImage.module.scss */
+
+@use "sass:color";
+$primary-color: #5b57ff;
+$border-color: #cbd5e1;
+$modal-overlay-bg: rgba(0, 0, 0, 0.4);
+$modal-bg: #ffffff;
+$font-family: "Roboto", sans-serif;
+$text-placeholder: #a0aec0;
+$text-author: #ffffff;
+
+/* Wrapper chính */
+.selectImage-container {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family;
+  color: $primary-color;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  .step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f0f3fa;
+    color: $primary-color;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+}
+
+/* Ô select image bên ngoài modal */
+.selector-box {
+  border: 2px dashed $border-color;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: color.adjust($border-color, $lightness: -10%);
+  }
+}
+
+/* Thumbnail preview (nếu đã chọn ảnh) */
+.thumbnail-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .edit-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $primary-color;
+    }
+  }
+}
+
+/* Placeholder (nếu chưa chọn ảnh) */
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  flex-shrink: 0;
+
+  .placeholder-text {
+    font-size: 14px;
+    color: $text-placeholder;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .choose-btn {
+    padding: 6px 12px;
+    border: 2px solid $primary-color;
+    border-radius: 4px;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-color;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #ffffff;
+    }
+  }
+}
+
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $modal-overlay-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* Nội dung modal */
+.modal-content {
+  background-color: $modal-bg;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Header modal (tiêu đề + nút đóng) */
+.modal-header {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+
+  .modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    color: $primary-color;
+  }
+
+  .close-icon {
+    cursor: pointer;
+    transition: transform 0.1s ease;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $primary-color;
+    }
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+/* Body modal: chứa search, upload, grid ảnh và Load More */
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  width: 100%;
+  position: relative;
+
+  input {
+    width: 100%;
+    padding: 10px 12px 10px 36px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    font-size: 14px;
+    color: $primary-color;
+    outline: none;
+
+    &::placeholder {
+      color: $text-placeholder;
+    }
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    svg {
+      width: 16px;
+      height: 16px;
+      fill: $text-placeholder;
+    }
+  }
+}
+
+/* UPLOAD AREA */
+.upload-area {
+  border: 2px dashed $border-color;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: color.adjust($border-color, $lightness: -10%);
+  }
+
+  .drag-text {
+    font-size: 14px;
+    color: $text-placeholder;
+    margin-bottom: 6px;
+  }
+
+  .upload-btn {
+    padding: 6px 12px;
+    border: 2px solid $primary-color;
+    border-radius: 4px;
+    background: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: $primary-color;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #ffffff;
+    }
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+}
+
+/* Grid ảnh mẫu */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Mỗi ô tối thiểu 200px, 3 cột khi đủ không gian */
+  gap: 12px;
+}
+
+/* Mỗi card ảnh: ảnh hiển thị full, không bo góc */
+.image-card {
+  position: relative;
+  width: 100%;
+  padding-top: 66.66%; /* tỉ lệ 3:2 */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* không bo góc */
+  }
+
+  .author-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    color: $text-author;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+}
+
+/* Nút Load More */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.load-more-btn {
+  padding: 8px 16px;
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+  background: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+}

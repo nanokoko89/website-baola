@@ -1,0 +1,229 @@
+/* Token cơ bản (anh có thể map vào theme) */
+:root {
+  --brand-600: #2563eb;
+  --brand-700: #1d4ed8;
+  --brand-50: #eff6ff;
+
+  --danger-600: #dc2626;
+  --danger-700: #b91c1c;
+  --danger-50: #fef2f2;
+
+  --neutral-900: #111827;
+  --neutral-800: #0b1220;
+  --neutral-700: #374151;
+  --neutral-600: #4b5563;
+  --neutral-300: #d1d5db;
+  --neutral-200: #e5e7eb;
+  --white: #fff;
+}
+
+/* ------- Base ------- */
+.btn {
+  --bg: var(--brand-600);
+  --bg-hover: var(--brand-700);
+  --text: #fff;
+  --border: transparent;
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  transition: transform 0.04s ease, background-color 0.15s ease,
+    color 0.15s ease, border-color 0.15s ease;
+  outline: none;
+
+  &:hover:not(.disabled):not(.loading) {
+    filter: brightness(0.98);
+  }
+  &:active:not(.disabled):not(.loading) {
+    transform: translateY(1px);
+  } /* Pressed */
+  &:focus-visible {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+/* Nội dung */
+.inner {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.label {
+  line-height: 1;
+  white-space: nowrap;
+}
+.icon {
+  display: inline-flex;
+}
+.onlyIcon {
+  display: inline-flex;
+}
+
+/* Khoảng cách icon theo Anatomy (leading/trailing) */
+.withLeading .prefix {
+  margin-right: 4px;
+}
+.withTrailing .suffix {
+  margin-left: 4px;
+}
+
+/* Loading spinner */
+.spinner {
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+.iconOnly .spinner {
+  inset: 0;
+  left: auto;
+  margin: auto;
+} /* giữa cho Icon Button */
+.btn.loading:not(.iconOnly) .inner {
+  padding-left: 24px;
+} /* chừa chỗ spinner */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------- Sizes ------- */
+.s-large {
+  min-height: 48px;
+  padding: 0 16px;
+  font-size: 16px;
+  border-radius: 14px;
+}
+.s-medium {
+  min-height: 40px;
+  padding: 0 14px;
+  font-size: 14px;
+  border-radius: 12px;
+}
+.s-small {
+  min-height: 32px;
+  padding: 0 12px;
+  font-size: 13px;
+  border-radius: 10px;
+}
+
+.iconOnly.s-large {
+  width: 48px;
+  padding: 0;
+}
+.iconOnly.s-medium {
+  width: 40px;
+  padding: 0;
+}
+.iconOnly.s-small {
+  width: 32px;
+  padding: 0;
+}
+
+/* ------- Variants x Types (đúng theo docs) ------- */
+/* variant=primary */
+.v-primary.t-highlight {
+  --bg: var(--brand-600);
+  --bg-hover: var(--brand-700);
+  --text: #fff;
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: var(--bg-hover);
+  }
+}
+.v-primary.t-danger {
+  --bg: var(--danger-600);
+  --bg-hover: var(--danger-700);
+  --text: #fff;
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: var(--bg-hover);
+  }
+}
+.v-primary.t-neutral {
+  --bg: var(--neutral-900);
+  --bg-hover: var(--neutral-800);
+  --text: #fff;
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: var(--bg-hover);
+  }
+}
+
+/* variant=secondary (tô nền nhạt theo type) */
+.v-secondary.t-highlight {
+  --bg: rgba(37, 99, 235, 0.1);
+  --text: var(--brand-700);
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: rgba(29, 78, 216, 0.15);
+  }
+}
+.v-secondary.t-danger {
+  --bg: rgba(220, 38, 38, 0.1);
+  --text: var(--danger-700);
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: rgba(185, 28, 28, 0.15);
+  }
+}
+.v-secondary.t-neutral {
+  --bg: #f3f4f6;
+  --text: var(--neutral-700);
+  --border: transparent;
+  &:hover:not(.disabled) {
+    background: #e5e7eb;
+  }
+}
+
+/* variant=tertiary (nền trắng, viền nhẹ theo type) */
+.v-tertiary.t-highlight {
+  --bg: var(--white);
+  --text: var(--brand-700);
+  --border: var(--brand-50);
+  &:hover:not(.disabled) {
+    background: #f8fafc;
+  }
+}
+.v-tertiary.t-danger {
+  --bg: var(--white);
+  --text: var(--danger-700);
+  --border: var(--danger-50);
+  &:hover:not(.disabled) {
+    background: #fff7f7;
+  }
+}
+.v-tertiary.t-neutral {
+  --bg: var(--white);
+  --text: var(--neutral-700);
+  --border: var(--neutral-300);
+  &:hover:not(.disabled) {
+    background: #f9fafb;
+  }
+}

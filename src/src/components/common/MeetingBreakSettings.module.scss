@@ -1,0 +1,125 @@
+/* MeetingBreakSettings.module.scss */
+
+/* Container tổng quát */
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Có thể truyền width tùy ý từ component cha */
+  font-family: "Roboto", sans-serif;
+}
+
+/* Tiêu đề */
+.title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1e2a78; /* Xanh đậm */
+  margin: 0 0 4px 0;
+}
+
+/* Mô tả phụ */
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #667085; /* Xám xanh */
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+}
+
+/* Row chứa 2 cột */
+.row {
+  display: flex;
+  gap: 24px; /* Khoảng cách giữa 2 cột */
+}
+
+/* Column (mỗi cột gồm switch + dropdown) */
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper cho phần switch (label + toggle) */
+.switchWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Label bên cạnh toggle */
+.switchLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e2a78;
+  margin-right: 8px;
+}
+
+/* Style cho switch (toggle) */
+.toggleSwitch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.toggleSwitch input {
+  /* Ẩn input checkbox mặc định */
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider (nền tròn) */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e2e5eb; /* Màu nền khi tắt */
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+/* Nút tròn di chuyển */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  top: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+/* Khi checked, nền xanh và nút tròn sang phải */
+input:checked + .slider {
+  background-color: #7c3aed; /* Tím */
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/* Dropdown wrapper (sẽ chứa DurationSelect) */
+.dropdownWrapper {
+  margin-top: 0px;
+}
+
+/* Input field cho PreventTime */
+.inputField {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #1e2a78;
+  border: 1px solid #d2d5dc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.inputField:focus {
+  border-color: #7c3aed;
+}
+
+/* Nếu muốn khoảng cách thêm, có thể tăng margin-top */

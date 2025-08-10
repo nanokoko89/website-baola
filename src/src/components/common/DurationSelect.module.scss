@@ -1,0 +1,113 @@
+/* DurationSelect.module.scss */
+
+.container {
+  position: relative;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Label (nếu cần style riêng) */
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #1f2d3d;
+}
+
+/* Khung select chính */
+.selectBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid #d2d5dc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+  &:hover {
+    border-color: #a3a8b8;
+  }
+}
+
+/* Khi dropdown đang mở, viền tím */
+.selectBox.open {
+  border-color: #7c3aed;
+}
+
+/* Khi disabled: mờ nền, border xám nhạt hơn, con trỏ không cho click */
+.selectBox.disabled {
+  background-color: #f0f1f5;
+  border-color: #e2e5eb;
+  cursor: not-allowed;
+}
+
+/* Value được chọn */
+.selectedValue {
+  font-size: 16px;
+  color: #1f2d3d;
+}
+
+/* Nếu disabled, cho chữ mờ đi */
+.selectBox.disabled .selectedValue {
+  color: #a1a5b5;
+}
+
+/* Mũi tên dropdown */
+.arrow {
+  font-size: 12px;
+  color: #1f2d3d;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Khi dropdown mở, xoay mũi tên */
+.selectBox.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Nếu disabled, mũi tên mờ */
+.selectBox.disabled .arrow {
+  color: #a1a5b5;
+}
+
+/* Danh sách options */
+.optionsList {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d2d5dc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+
+  /* Ẩn scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+}
+
+/* 1 option trong list */
+.optionItem {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #1f2d3d;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+/* Tùy bạn có thể highlight item đang chọn */
+.optionItem.selected {
+  background-color: #eef1ff;
+  font-weight: 600;
+}

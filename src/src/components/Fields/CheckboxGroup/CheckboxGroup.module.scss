@@ -1,0 +1,49 @@
+/* src/components/CheckboxGroup/CheckboxGroup.module.scss */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: 18px;
+  color: var(--template-text-color);
+  font-weight: 500;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background-color: var(--template-color-primary);
+
+  input {
+    display: none;
+  }
+  .box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #1f5a4d;
+    margin-right: 12px;
+    position: relative;
+  }
+  input:checked + .box::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    width: 6px;
+    height: 12px;
+    border: solid #1f5a4d;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .label {
+    font-size: 16px;
+    color: var(--template-button-text-color);
+  }
+}

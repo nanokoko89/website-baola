@@ -1,0 +1,41 @@
+.container {
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.previewContent {
+  // min-height: 200px;
+
+  .headingLike {
+    font-size: calc(1em + 2px) !important;
+    font-weight: normal !important;
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  /* Nếu bạn muốn style thêm: ví dụ cho thẻ heading, list… */
+  p {
+    margin-bottom: 8px;
+  }
+  ul {
+    list-style: disc inside;
+  }
+  li::marker {
+    color: var(--template-color-primary, #000000);
+  }
+  a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+  font-style: italic;
+}
