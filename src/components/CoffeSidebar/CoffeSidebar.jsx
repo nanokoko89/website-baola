@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Sidebar.module.scss";
+import styles from "./CoffeSidebar.module.scss";
 import classNames from "classnames/bind";
 
 const cx = classNames.bind(styles);
@@ -40,7 +40,7 @@ const sections = [
   },
 ];
 
-export default function Sidebar({ activeId = "home", onNavigate }) {
+export default function CoffeSidebar({ activeId = "home", onNavigate }) {
   return (
     <aside className={cx("wrap")} role="navigation" aria-label="Sidebar">
       <div className={cx("brand")}>
