@@ -180,7 +180,7 @@ const Dashboard = () => {
             percent={stats.leads.percent}
             active={activeChart === "leads"}
             onClick={() => setActiveChart("leads")}
-            color="#ffa500"
+            color="#ff7edb"
           />
         </div>
         <div className={cx("chartsContainer")}>
@@ -206,7 +206,7 @@ const Dashboard = () => {
             <ChartBar
               data={ordersData}
               dataKey="value"
-              color="#ffa500"
+              color="#ff7edb"
               startDate={dateRange.start}
               endDate={dateRange.end}
             />

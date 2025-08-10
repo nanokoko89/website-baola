@@ -60,13 +60,16 @@ export function groupVisitsByDate(logs) {
       log.createdAt && log.createdAt.seconds
         ? new Date(log.createdAt.seconds * 1000)
         : new Date(log.createdAt || Date.now());
-    const label = ts.toLocaleDateString("vi-VN", {
-      day: "2-digit",
-      month: "short",
-    });
-    map[label] = (map[label] || 0) + 1;
+    const iso = ts.toISOString().split("T")[0];
+    map[iso] = (map[iso] || 0) + 1;
   });
   return Object.keys(map)
-    .sort((a, b) => new Date(a) - new Date(b))
-    .map((date) => ({ date, value: map[date] }));
+    .sort()
+    .map((date) => ({
+      date: new Date(date).toLocaleDateString("vi-VN", {
+        day: "2-digit",
+        month: "short",
+      }),
+      value: map[date],
+    }));
 }

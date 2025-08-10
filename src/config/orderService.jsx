@@ -81,15 +81,18 @@ export function groupRevenueByDate(orders) {
       ord.createdAt && ord.createdAt.seconds
         ? new Date(ord.createdAt.seconds * 1000)
         : new Date(ord.createdAt || Date.now());
-    const label = ts.toLocaleDateString("vi-VN", {
-      day: "2-digit",
-      month: "short",
-    });
-    map[label] = (map[label] || 0) + (ord.amount || 0);
+    const iso = ts.toISOString().split("T")[0];
+    map[iso] = (map[iso] || 0) + (ord.amount || 0);
   });
   return Object.keys(map)
-    .sort((a, b) => new Date(a) - new Date(b))
-    .map((date) => ({ date, revenue: map[date] }));
+    .sort()
+    .map((date) => ({
+      date: new Date(date).toLocaleDateString("vi-VN", {
+        day: "2-digit",
+        month: "short",
+      }),
+      revenue: map[date],
+    }));
 }
 
 export function groupOrdersByDate(orders) {
@@ -99,15 +102,18 @@ export function groupOrdersByDate(orders) {
       ord.createdAt && ord.createdAt.seconds
         ? new Date(ord.createdAt.seconds * 1000)
         : new Date(ord.createdAt || Date.now());
-    const label = ts.toLocaleDateString("vi-VN", {
-      day: "2-digit",
-      month: "short",
-    });
-    map[label] = (map[label] || 0) + 1;
+    const iso = ts.toISOString().split("T")[0];
+    map[iso] = (map[iso] || 0) + 1;
   });
   return Object.keys(map)
-    .sort((a, b) => new Date(a) - new Date(b))
-    .map((date) => ({ date, value: map[date] }));
+    .sort()
+    .map((date) => ({
+      date: new Date(date).toLocaleDateString("vi-VN", {
+        day: "2-digit",
+        month: "short",
+      }),
+      value: map[date],
+    }));
 }
 
 export async function hasUserPurchasedProduct(userId, productId) {
