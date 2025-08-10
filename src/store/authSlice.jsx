@@ -54,6 +54,7 @@ export const signupWithEmail = createAsyncThunk(
       await setDoc(doc(db, "users", user.uid), {
         username,
         fullName,
+        displayName: fullName,
         email,
         phone,
         avatarURL: null,
@@ -187,7 +188,11 @@ export const listenAuthState = createAsyncThunk(
             const fullProfile = {
               ...basicInfo,
               username: docData.username || "",
-              displayName: docData.displayName || basicInfo.displayName || "",
+              displayName:
+                docData.displayName ||
+                docData.fullName ||
+                basicInfo.displayName ||
+                "",
               bio: docData.bio || "",
               avatarURL: docData.avatarURL || basicInfo.photoURL || null,
               phone: docData.phone || basicInfo.phoneNumber || "",
@@ -212,7 +217,10 @@ export const listenAuthState = createAsyncThunk(
                   avatarURL:
                     updatedData.avatarURL || basicInfo.photoURL || null,
                   displayName:
-                    updatedData.displayName || basicInfo.displayName || "",
+                    updatedData.displayName ||
+                    updatedData.fullName ||
+                    basicInfo.displayName ||
+                    "",
                   bio: updatedData.bio || "",
                   phone: updatedData.phone || basicInfo.phoneNumber || "",
                   socialLinks: updatedData.socialLinks || {},
@@ -253,7 +261,10 @@ export const listenAuthState = createAsyncThunk(
                   avatarURL:
                     updatedData.avatarURL || basicInfo.photoURL || null,
                   displayName:
-                    updatedData.displayName || basicInfo.displayName || "",
+                    updatedData.displayName ||
+                    updatedData.fullName ||
+                    basicInfo.displayName ||
+                    "",
                   bio: updatedData.bio || "",
                   phone: updatedData.phone || basicInfo.phoneNumber || "",
                   socialLinks: updatedData.socialLinks || {},

@@ -103,9 +103,13 @@ const Account = () => {
         });
       }
 
-      // 2. Cập nhật fullName xuống Firestore
+      // 2. Cập nhật tên xuống Firestore để đồng bộ với listener
       const userDocRef = doc(db, "users", currentUser.uid);
-      await setDoc(userDocRef, { fullName: fullName.trim() }, { merge: true });
+      await setDoc(
+        userDocRef,
+        { fullName: fullName.trim(), displayName: fullName.trim() },
+        { merge: true }
+      );
 
       // 3. Upload avatar (nếu có) và cập nhật photoURL
       let newAvatarURL = currentUser.avatarURL || currentUser.photoURL || null;

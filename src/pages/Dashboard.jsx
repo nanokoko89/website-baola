@@ -185,13 +185,31 @@ const Dashboard = () => {
         </div>
         <div className={cx("chartsContainer")}>
           {activeChart === "revenue" && (
-            <ChartBar data={revenueData} dataKey="revenue" color="#5b57ff" />
+            <ChartBar
+              data={revenueData}
+              dataKey="revenue"
+              color="#5b57ff"
+              startDate={dateRange.start}
+              endDate={dateRange.end}
+            />
           )}
           {activeChart === "visits" && (
-            <ChartBar data={visitData} dataKey="value" color="#06d6a0" />
+            <ChartBar
+              data={visitData}
+              dataKey="value"
+              color="#06d6a0"
+              startDate={dateRange.start}
+              endDate={dateRange.end}
+            />
           )}
           {activeChart === "leads" && (
-            <ChartBar data={ordersData} dataKey="value" color="#ffa500" />
+            <ChartBar
+              data={ordersData}
+              dataKey="value"
+              color="#ffa500"
+              startDate={dateRange.start}
+              endDate={dateRange.end}
+            />
           )}
         </div>
         <BottomTabs />
