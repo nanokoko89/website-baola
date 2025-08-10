@@ -6,7 +6,7 @@
   align-items: center;
   background-color: #faf6f0;
   color: #1f1f1f;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--template-font-family, "Plus Jakarta Sans"), sans-serif;
   padding-bottom: 40px;
   width: 100%;
   height: auto;

@@ -323,6 +323,13 @@ export default function DraggableList({ products = [], setProducts }) {
       >
         + Thêm sản phẩm
       </div>
+
+      <div
+        className={bind("add-template-btn")}
+        onClick={() => navigate("/mystore/choose-mini-layout")}
+      >
+        + Thêm mẫu
+      </div>
       <ChangeThumbnailModal
         isOpen={showChangeModal}
         product={selectedProduct}

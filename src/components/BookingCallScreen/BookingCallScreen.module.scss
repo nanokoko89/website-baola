@@ -18,7 +18,7 @@
 }
 
 .container {
-  font-family: var(--template-font-family, sans-serif);
+  font-family: var(--template-font-family, 'Plus Jakarta Sans'), sans-serif;
   color: var(--template-text-color);
   padding: 1rem;
 }

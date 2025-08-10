@@ -22,4 +22,4 @@ const assetFonts = Array.from(
 export const FONTS = ['system-ui', ...assetFonts];
 
 // The browser default font should be selected initially
-export const DEFAULT_FONT = 'Roboto';
+export const DEFAULT_FONT = 'Plus Jakarta Sans';

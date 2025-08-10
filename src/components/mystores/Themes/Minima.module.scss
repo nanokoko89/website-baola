@@ -7,7 +7,7 @@
 .minima-wrapper {
   margin: 0 auto;
   background-color: #f0f0f0; /* Nền chung của page (xám rất nhạt) */
-  font-family: "Roboto", sans-serif;
+  font-family: var(--template-font-family, "Plus Jakarta Sans"), sans-serif;
   display: flex;
   flex-direction: column;
   gap: 24px;

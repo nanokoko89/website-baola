@@ -6,7 +6,7 @@
   align-items: center;
   background-color: #f4e9e9; /* Màu nền hồng nhạt */
   color: #1f1f1f;
-  font-family: "Roboto", sans-serif;
+  font-family: var(--template-font-family, "Plus Jakarta Sans"), sans-serif;
   // padding: 16px;
   width: 100%;
   height: auto;

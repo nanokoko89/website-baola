@@ -25,7 +25,7 @@ const Tabs = ({ onChange }) => {
 
   return (
     <div className={cx("container")}>
-      <h2>Hey {currentUser.displayName} - chào mừng trở lại! </h2>
+      <h1>Xin chào {currentUser.displayName}! </h1>
       <div className={cx("tabsContainer")}>
         {tabOptions.map((label, idx) => (
           <button

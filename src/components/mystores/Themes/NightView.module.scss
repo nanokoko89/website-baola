@@ -5,7 +5,7 @@
 
 .night-wrapper {
   background-color: #0a0a23; /* Màu nền đen tím */
-  font-family: "Roboto", sans-serif;
+  font-family: var(--template-font-family, "Plus Jakarta Sans"), sans-serif;
   color: #ffffff;
   display: flex;
   flex-direction: column;

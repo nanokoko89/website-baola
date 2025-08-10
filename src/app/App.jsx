@@ -37,6 +37,7 @@ import Course from "../pages/Course";
 import TiktokShopBanner from "../components/common/TiktokShopBanner";
 import ProductCreate from "../pages/ProductCreate";
 import TestPage from "../pages/TestPage";
+import ChooseMiniLayout from "../pages/ChooseMiniLayout";
 
 function App() {
   const dispatch = useDispatch();
@@ -95,6 +96,11 @@ function App() {
 
         <Route path="/income" element={<MyIncome />} />
         <Route path="/mystore/choose-product-type" element={<ProductType />} />
+        <Route
+          path="/mystore/choose-mini-layout"
+          element={<ChooseMiniLayout />}
+        />
+
         <Route path="/course/:courseId" element={<Course />} />
 
         <Route
