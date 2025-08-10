@@ -1,10 +1,10 @@
 // AvatarUploader.jsx
 import { useState, useRef } from "react";
-import { storage } from "../config/firebase";
+import { storage } from "../src/config/firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import styles from "./AvatarUploader.module.scss"; // dùng SCSS Module
 import classNames from "classnames/bind";
-import { cropImageToCircle } from "../config/cropImage";
+import { cropImageToCircle } from "../src/config/cropImage";
 const cx = classNames.bind(styles);
 
 export default function AvatarUploader() {

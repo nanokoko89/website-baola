@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import classNames from "classnames/bind";
 import styles from "./TemplateStylePreview.module.scss";
-import { slides } from "../../config/others";
-import getContrastTextColor from "../../config/getContrastTextColor";
+import { slides } from "../../src/config/others";
+import getContrastTextColor from "../../src/config/getContrastTextColor";
 
 import * as DefaultCards from "../mystores/ProductCards/DefaultCards";
 import * as ModernoCards from "../mystores/ProductCards/ModernoCards";
