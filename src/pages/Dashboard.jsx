@@ -164,6 +164,7 @@ const Dashboard = () => {
             percent={stats.visits.percent}
             active={activeChart === "visits"}
             onClick={() => setActiveChart("visits")}
+            color="#06d6a0"
           />
           <StatsCard
             type="revenue"
@@ -171,6 +172,7 @@ const Dashboard = () => {
             percent={stats.revenue.percent}
             active={activeChart === "revenue"}
             onClick={() => setActiveChart("revenue")}
+            color="#5b57ff"
           />
           <StatsCard
             type="leads"
@@ -178,17 +180,20 @@ const Dashboard = () => {
             percent={stats.leads.percent}
             active={activeChart === "leads"}
             onClick={() => setActiveChart("leads")}
+            color="#ffa500"
           />
         </div>
-        {activeChart === "revenue" && (
-          <ChartBar data={revenueData} dataKey="revenue" color="#5b57ff" />
-        )}
-        {activeChart === "visits" && (
-          <ChartBar data={visitData} dataKey="value" color="#06d6a0" />
-        )}
-        {activeChart === "leads" && (
-          <ChartBar data={ordersData} dataKey="value" color="#ffa500" />
-        )}
+        <div className={cx("chartsContainer")}>
+          {activeChart === "revenue" && (
+            <ChartBar data={revenueData} dataKey="revenue" color="#5b57ff" />
+          )}
+          {activeChart === "visits" && (
+            <ChartBar data={visitData} dataKey="value" color="#06d6a0" />
+          )}
+          {activeChart === "leads" && (
+            <ChartBar data={ordersData} dataKey="value" color="#ffa500" />
+          )}
+        </div>
         <BottomTabs />
       </div>
     </div>

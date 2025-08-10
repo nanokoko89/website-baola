@@ -12,7 +12,14 @@ import numberWithCommas from "../../../config/numberWithCommas";
 const cx = classNames.bind(styles);
 
 // type: "visits" | "revenue" | "leads", mainValue: số chính, percent: % tăng giảm
-const StatsCard = ({ type, mainValue, percent, active = false, onClick }) => {
+const StatsCard = ({
+  type,
+  mainValue,
+  percent,
+  active = false,
+  onClick,
+  color = "#17d945ff",
+}) => {
   let title,
     IconComponent,
     isCurrency = false;
@@ -39,7 +46,11 @@ const StatsCard = ({ type, mainValue, percent, active = false, onClick }) => {
   const isNegative = percent < 0;
 
   return (
-    <div className={cx("statsCard", { active })} onClick={onClick}>
+    <div
+      className={cx("statsCard", { active })}
+      onClick={onClick}
+      style={active ? { borderColor: color } : undefined}
+    >
       <div className={cx("cardHeader")}>
         <span className={cx("icon")}>
           <IconComponent size={18} color="#6c6cff" />
