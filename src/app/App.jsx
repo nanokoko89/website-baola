@@ -39,6 +39,7 @@ import ProductCreate from "../pages/ProductCreate";
 import TestPage from "../pages/TestPage";
 import ChooseMiniLayout from "../pages/ChooseMiniLayout";
 import AffiliatePage from "../pages/AffiliatePage";
+import SidebarLayout from "../layouts/SidebarLayout/SidebarLayout";
 
 function App() {
   const dispatch = useDispatch();
@@ -85,46 +86,51 @@ function App() {
         <Route path="/shortener" element={<ShortenerPage />} />
         <Route path="/tiktok-banner" element={<TiktokShopBanner />} />
 
-        <Route
-          path="/dashboard"
-          element={
-            currentUser ? <Dashboard /> : <Navigate to="/login" replace />
-          }
-        />
-        <Route path="/mystore" element={<MyStorePage />} />
-
-        <Route path="/edit-profile" element={<EditProfilePage />} />
-
-        <Route path="/income" element={<MyIncome />} />
-        <Route path="/mystore/choose-product-type" element={<ProductType />} />
-        <Route
-          path="/mystore/choose-mini-layout"
-          element={<ChooseMiniLayout />}
-        />
+        <Route element={<SidebarLayout />}>
+          <Route
+            path="/dashboard"
+            element={
+              currentUser ? <Dashboard /> : <Navigate to="/login" replace />
+            }
+          />
+          <Route path="/mystore" element={<MyStorePage />} />
+          <Route path="/edit-profile" element={<EditProfilePage />} />
+          <Route path="/income" element={<MyIncome />} />
+          <Route path="/mystore/choose-product-type" element={<ProductType />} />
+          <Route
+            path="/mystore/choose-mini-layout"
+            element={<ChooseMiniLayout />}
+          />
+          <Route
+            path="/mystore/create-product/:type"
+            element={<CreateProductPage />}
+          />
+          <Route
+            path="/affiliate"
+            element={
+              currentUser ? (
+                <AffiliatePage />
+              ) : (
+                <Navigate to="/login" replace />
+              )
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              currentUser ? <Profile /> : <Navigate to="/login" replace />
+            }
+          />
+        </Route>
 
         <Route path="/course/:courseId" element={<Course />} />
 
-        <Route
-          path="/mystore/create-product/:type"
-          element={<CreateProductPage />}
-        />
         <Route path="/product-create" element={<ProductCreate />} />
 
         <Route path="/:username/:productId" element={<CheckoutPage />} />
         <Route
           path="/:username/success/:productId"
           element={<ThankYouPage />}
-        />
-        <Route
-          path="/affiliate"
-          element={
-            currentUser ? <AffiliatePage /> : <Navigate to="/login" replace />
-          }
-        />
-
-        <Route
-          path="/profile"
-          element={currentUser ? <Profile /> : <Navigate to="/login" replace />}
         />
         <Route
           path="/signup"

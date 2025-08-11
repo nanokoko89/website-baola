@@ -1,8 +1,6 @@
 import RevenueChart from "../components/MyIncome/RevenueChart/RevenueChart";
 import OrdersTable from "../components/MyIncome/OrdersTable/OrdersTable";
-import Sidebar from "../components/utils/Sidebar/Sidebar";
 import HeaderBar from "../components/utils/Headerbar";
-import BottomTabs from "../components/utils/BottomTabs";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { fetchOrdersByUser, groupRevenueByDate } from "../config/orderService";
@@ -30,14 +28,12 @@ const MyIncome = () => {
   }, [currentUser]);
   return (
     <>
-      <Sidebar />
       <HeaderBar title="Kết quả" />
       <RevenueChart data={revenueData} available={available} />
 
       {orders.length > 0 && <OrdersTable orders={orders} />}
 
       {/* <StatsDashboard /> */}
-      <BottomTabs />
     </>
   );
 };

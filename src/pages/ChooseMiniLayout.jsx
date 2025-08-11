@@ -1,6 +1,5 @@
 // src/pages/MyStorePage.jsx
 import React from "react";
-import Sidebar from "../components/utils/Sidebar/Sidebar";
 import MiniLayouts from "../components/MiniLayouts";
 import HeaderBar from "../components/utils/Headerbar";
 
@@ -11,7 +10,6 @@ const ChooseMiniLayout = () => {
   ];
   return (
     <>
-      <Sidebar />
       {/* Truyền title là My Store */}
       <HeaderBar items={breadcrumbItems} />
       <MiniLayouts />

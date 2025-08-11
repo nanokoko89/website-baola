@@ -68,7 +68,7 @@ const Sidebar = () => {
                 <span className={cx("icon")}>
                   <item.Icon size={20} />
                 </span>
-                <span>{item.label}</span>
+                <span className={cx("label")}>{item.label}</span>
               </NavLink>
             </li>
           );

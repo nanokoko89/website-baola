@@ -1,6 +1,5 @@
 // src/pages/MyStorePage.jsx
 import React from "react";
-import Sidebar from "../components/utils/Sidebar/Sidebar";
 import ChooseProductType from "../components/ChooseProductType";
 import HeaderBar from "../components/utils/Headerbar";
 
@@ -11,7 +10,6 @@ const ProductType = () => {
   ];
   return (
     <>
-      <Sidebar />
       {/* Truyền title là My Store */}
       <HeaderBar items={breadcrumbItems} />
       <ChooseProductType />

@@ -1,4 +1,3 @@
-import Sidebar from "../components/utils/Sidebar/Sidebar";
 
 import Tabs from "../components/dashboards/Tabs/Tabs";
 import StatsCard from "../components/dashboards/StatsCard/StatsCard";
@@ -20,7 +19,6 @@ import {
   groupVisitsByDate,
   subscribeVisitLogsByUser,
 } from "../config/visitService";
-import BottomTabs from "../components/utils/BottomTabs";
 
 const cx = classNames.bind(styles);
 
@@ -153,7 +151,6 @@ const Dashboard = () => {
 
   return (
     <div className={cx("layout")}>
-      <Sidebar />
       <div className={cx("content")}>
         <HeaderBar title="Trang chủ" userName="Alex" />
         <Tabs onChange={handleTabChange} />
@@ -212,7 +209,6 @@ const Dashboard = () => {
             />
           )}
         </div>
-        <BottomTabs />
       </div>
     </div>
   );

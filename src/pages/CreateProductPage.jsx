@@ -1,6 +1,5 @@
 // src/pages/MyStorePage.jsx
 import React, { useState } from "react";
-import Sidebar from "../components/utils/Sidebar/Sidebar";
 import HeaderBar from "../components/utils/Headerbar";
 import CreateProduct from "../components/CreateProduct";
 import { useParams, useSearchParams } from "react-router-dom";
@@ -21,7 +20,6 @@ const CreateProductPage = () => {
   const [showPreview, setShowPreview] = useState(false);
   return (
     <>
-      <Sidebar />
       <HeaderBar
         items={breadcrumbItems}
         onPreviewClick={() => setShowPreview((p) => !p)}
