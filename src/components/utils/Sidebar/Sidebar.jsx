@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import classNames from "classnames/bind";
 import styles from "./Sidebar.module.scss";
+import { TbAffiliate } from "react-icons/tb";
 
 import { AiOutlineHome, AiOutlineBarChart } from "react-icons/ai";
 import { PiStorefrontLight } from "react-icons/pi";
@@ -22,6 +23,8 @@ const Sidebar = () => {
     // HOẶC location.pathname === "/edit-profile"
     { to: "/mystore", label: "Cửa hàng", Icon: PiStorefrontLight },
     { to: "/income", label: "Kết quả", Icon: AiOutlineBarChart },
+    { to: "/affiliate", label: "Tiếp thị liên kết", Icon: TbAffiliate },
+
     // { to: "/calendar", label: "Lịch", Icon: AiOutlineBarChart },
   ];
 

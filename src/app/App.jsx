@@ -38,6 +38,7 @@ import TiktokShopBanner from "../components/common/TiktokShopBanner";
 import ProductCreate from "../pages/ProductCreate";
 import TestPage from "../pages/TestPage";
 import ChooseMiniLayout from "../pages/ChooseMiniLayout";
+import AffiliatePage from "../pages/AffiliatePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -113,6 +114,12 @@ function App() {
         <Route
           path="/:username/success/:productId"
           element={<ThankYouPage />}
+        />
+        <Route
+          path="/affiliate"
+          element={
+            currentUser ? <AffiliatePage /> : <Navigate to="/login" replace />
+          }
         />
 
         <Route
