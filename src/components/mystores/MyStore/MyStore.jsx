@@ -1,5 +1,5 @@
 // src/pages/MyStore.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { collection, onSnapshot } from "firebase/firestore";
@@ -74,11 +74,11 @@ function MyStore({ mobilePreviewOpen = false, onClosePreview }) {
     return () => unsubscribe();
   }, [currentUser]); // Thêm currentUser vào dependency để reload khi user thay đổi
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!currentTabParam) {
-      setSearchParams({ tab: defaultTab });
+      setSearchParams({ tab: defaultTab }, { replace: true });
     }
-  }, []);
+  }, [currentTabParam, setSearchParams]);
 
   useEffect(() => {
     const updatedTab = searchParams.get("tab") || defaultTab;
