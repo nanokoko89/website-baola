@@ -4,10 +4,10 @@ import MiniLayouts from "../components/MiniLayouts";
 import HeaderBar from "../components/utils/Headerbar";
 
 const ChooseMiniLayout = () => {
-  const breadcrumbItems = [
-    { label: "Cửa hàng", link: "/mystore" },
-    { label: "Thêm mẫu", link: "/mystore/choose-mini-layout" },
-  ];
+    const breadcrumbItems = [
+      { label: "Cửa hàng", link: "/mystore?tab=store" },
+      { label: "Thêm mẫu", link: "/mystore/choose-mini-layout" },
+    ];
   return (
     <>
       {/* Truyền title là My Store */}

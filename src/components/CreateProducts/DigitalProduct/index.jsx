@@ -107,8 +107,8 @@ export default function DigitalProduct({
       const productsCol = collection(db, "products");
       if (id) {
         const ref = doc(db, "products", id);
-        await updateDoc(ref, { ...newProduct, published: true });
-        navigate("/mystore");
+          await updateDoc(ref, { ...newProduct, published: true });
+          navigate("/mystore?tab=store");
         return id;
       }
       const q = query(
@@ -231,7 +231,7 @@ export default function DigitalProduct({
         }
         onClose={() => {
           setPublishedInfo(null);
-          navigate("/mystore");
+          navigate("/mystore?tab=store");
         }}
       />{" "}
     </>
@@ -382,10 +382,10 @@ function PaymentComponent({ handlePublish, id }) {
         title="Xuất bản"
         handleBtn={handlePublish}
         deleteBtn={id ? true : false}
-        onDelete={() => {
-          deleteProduct(id);
-          navigate("/mystore");
-        }}
+          onDelete={() => {
+            deleteProduct(id);
+            navigate("/mystore?tab=store");
+          }}
       />
     </div>
   );

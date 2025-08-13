@@ -162,8 +162,8 @@ export default function CustomProduct() {
       const productsCol = collection(db, "products");
       if (id) {
         const ref = doc(db, "products", id);
-        await updateDoc(ref, { ...coachingCall, published: true });
-        navigate("/mystore");
+          await updateDoc(ref, { ...coachingCall, published: true });
+          navigate("/mystore?tab=store");
         return id;
       }
       const q = query(
@@ -318,8 +318,8 @@ export default function CustomProduct() {
             : ""
         }
         onClose={() => {
-          setPublishedInfo(null);
-          navigate("/mystore");
+            setPublishedInfo(null);
+            navigate("/mystore?tab=store");
         }}
       />
     </>

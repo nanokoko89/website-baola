@@ -214,7 +214,7 @@ const StoreHeaderEdit = () => {
         socialLinks: socialObj,
         updatedAt: new Date().toISOString(),
       });
-      navigate("/mystore");
+        navigate("/mystore?tab=store");
     } catch (error) {
       console.error("Lỗi khi lưu dữ liệu profile:", error);
     }

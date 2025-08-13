@@ -173,8 +173,8 @@ export default function onlineCourse({
       const productsCol = collection(db, "products");
       if (id) {
         const ref = doc(db, "products", id);
-        await updateDoc(ref, { ...onlineCourse, published: true });
-        navigate("/mystore");
+          await updateDoc(ref, { ...onlineCourse, published: true });
+          navigate("/mystore?tab=store");
         return id;
       }
       const q = query(
@@ -311,8 +311,8 @@ export default function onlineCourse({
             : ""
         }
         onClose={() => {
-          setPublishedInfo(null);
-          navigate("/mystore");
+            setPublishedInfo(null);
+            navigate("/mystore?tab=store");
         }}
       />
     </>

@@ -70,12 +70,16 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            !currentUser ? <HomePage /> : <Navigate to="/mystore" replace />
-          }
-        />
+          <Route
+            path="/"
+            element={
+              !currentUser ? (
+                <HomePage />
+              ) : (
+                <Navigate to="/mystore?tab=store" replace />
+              )
+            }
+          />
         <Route path="/mission" element={<MissionPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 

@@ -9,13 +9,13 @@ const CreateProductPage = () => {
   const [searchParams] = useSearchParams();
   const isEditing = Boolean(searchParams.get("id"));
 
-  const breadcrumbItems = [
-    { label: "Cửa hàng", link: "/mystore" },
-    {
-      label: isEditing ? "Sửa sản phẩm" : "Tạo sản phẩm",
-      link: "/mystore/choose-product-type",
-    },
-  ];
+    const breadcrumbItems = [
+      { label: "Cửa hàng", link: "/mystore?tab=store" },
+      {
+        label: isEditing ? "Sửa sản phẩm" : "Tạo sản phẩm",
+        link: "/mystore/choose-product-type",
+      },
+    ];
 
   const [showPreview, setShowPreview] = useState(false);
   return (

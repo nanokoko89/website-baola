@@ -4,10 +4,10 @@ import ChooseProductType from "../components/ChooseProductType";
 import HeaderBar from "../components/utils/Headerbar";
 
 const ProductType = () => {
-  const breadcrumbItems = [
-    { label: "Cửa hàng", link: "/mystore" },
-    { label: "Chọn loại sản phẩm", link: "/mystore/choose-product-type" },
-  ];
+    const breadcrumbItems = [
+      { label: "Cửa hàng", link: "/mystore?tab=store" },
+      { label: "Chọn loại sản phẩm", link: "/mystore/choose-product-type" },
+    ];
   return (
     <>
       {/* Truyền title là My Store */}

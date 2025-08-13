@@ -19,9 +19,9 @@ const Sidebar = () => {
   // Nav chính
   const navItems = [
     { to: "/dashboard", label: "Trang chủ", Icon: AiOutlineHome },
-    // Tab "Cửa hàng của tôi" sẽ active khi location.pathname === "/mystore"
-    // HOẶC location.pathname === "/edit-profile"
-    { to: "/mystore", label: "Cửa hàng", Icon: PiStorefrontLight },
+    // Thêm tham số ?tab=store để tránh redirect gây nháy trắng
+    // và vẫn active khi đang ở /mystore hoặc /edit-profile
+    { to: "/mystore?tab=store", label: "Cửa hàng", Icon: PiStorefrontLight },
     { to: "/income", label: "Kết quả", Icon: AiOutlineBarChart },
     { to: "/affiliate", label: "Tiếp thị liên kết", Icon: TbAffiliate },
 
@@ -49,7 +49,7 @@ const Sidebar = () => {
           // Tạo biến customActive cho từng item
           let customActive = false;
 
-          if (item.to === "/mystore") {
+          if (item.to.startsWith("/mystore")) {
             // Muốn mystore active khi /mystore HOẶC /edit-profile
             customActive =
               location.pathname.startsWith("/mystore") ||

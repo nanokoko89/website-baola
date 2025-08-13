@@ -19,7 +19,8 @@ const BottomTabs = () => {
   const currentUser = useSelector(selectCurrentUser);
   const navItems = [
     { to: "/dashboard", label: "Trang chủ", Icon: AiOutlineHome },
-    { to: "/mystore", label: "Cửa hàng", Icon: PiStorefrontLight },
+    // Tránh redirect khi vào mystore bằng cách thêm ?tab=store
+    { to: "/mystore?tab=store", label: "Cửa hàng", Icon: PiStorefrontLight },
     { to: "/income", label: "Kết quả", Icon: AiOutlineBarChart },
     {
       to: "/profile",
@@ -32,7 +33,7 @@ const BottomTabs = () => {
     <nav className={cx("bottomTabs")}>
       {navItems.map((item) => {
         let isActive = false;
-        if (item.to === "/mystore") {
+        if (item.to.startsWith("/mystore")) {
           isActive =
             location.pathname.startsWith("/mystore") ||
             location.pathname === "/edit-profile";
